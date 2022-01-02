@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CategoryRoutingModule } from './category-routing.module';
 import { CategoryEditComponent } from './category-edit/category-edit.component';
 import { CategoryListComponent } from './category-list/category-list.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CategoryCreateComponent} from "./category-create/category-create.component";
 
 
@@ -14,10 +14,11 @@ import {CategoryCreateComponent} from "./category-create/category-create.compone
     CategoryCreateComponent,
     CategoryListComponent
   ],
-    imports: [
-        CommonModule,
-        CategoryRoutingModule,
-        ReactiveFormsModule
-    ]
+  imports: [
+    CommonModule,
+    CategoryRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
+  ]
 })
 export class CategoryModule { }

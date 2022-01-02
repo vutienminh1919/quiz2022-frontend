@@ -1,4 +1,4 @@
-<h1>Danh sách danh mục sản phẩm</h1>
+<h1>Danh sách danh mục câu hỏi</h1>
 <a routerLink="/category/create">Tạo mới danh mục</a>
 <table>
   <tr>
@@ -9,7 +9,9 @@
   <tr *ngFor="let category of categories; index as i">
     <td>{{i + 1}}</td>
     <td>{{category.name}}</td>
-    <td><a [routerLink]="['/category/edit',category.id]">Edit</a></td>
-    <td><a [routerLink]="['/category/delete',category.id]">Delete</a></td>
+    <td><a [routerLink]="['/category/update',category.id]">Edit</a></td>
+    <td>
+      <button (click)="delete(i)">Delete</button>
+    </td>
   </tr>
 </table>
