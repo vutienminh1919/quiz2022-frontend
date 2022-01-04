@@ -1,11 +1,28 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {RegisterComponent} from "./components/auth/register/register.component";
+import {LoginComponent} from "./components/auth/login/login.component";
+
 
 const routes: Routes = [
   {
-    path: '',
-    component: RegisterComponent,
+    path: 'auth',
+    children: [
+      {
+        path: 'register',
+        component: RegisterComponent
+      },
+      {
+        path: 'login',
+        component: LoginComponent
+      }
+    ]
+  },
+
+  {
+    path: 'category',
+    loadChildren: () => import('../app/components/category/category.module').then(module => module.CategoryModule)
+
   }
 ];
 
@@ -13,4 +30,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
