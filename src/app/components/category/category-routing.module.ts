@@ -5,7 +5,7 @@ import {CategoryCreateComponent} from "./category-create/category-create.compone
 import {CategoryEditComponent} from "./category-edit/category-edit.component";
 
 const routes: Routes = [
-  {
+ 
     {
     path:'list',
 
