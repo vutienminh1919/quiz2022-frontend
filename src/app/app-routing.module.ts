@@ -4,6 +4,7 @@ import {RegisterComponent} from "./components/auth/register/register.component";
 import {LoginComponent} from "./components/auth/login/login.component";
 
 
+
 const routes: Routes = [
   {
     path: 'auth',
@@ -22,9 +23,7 @@ const routes: Routes = [
   {
     path: 'category',
     loadChildren: () => import('../app/components/category/category.module').then(module => module.CategoryModule)
-
-  }
-];
+  }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

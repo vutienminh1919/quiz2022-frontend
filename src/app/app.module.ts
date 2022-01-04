@@ -19,6 +19,7 @@ import {LoginComponent} from "./components/auth/login/login.component";
     AppComponent,
     RegisterComponent,
     LoginComponent
+
   ],
   imports: [
     BrowserModule,
