@@ -4,6 +4,7 @@ import { AuthService } from "../../../service/auth.service";
 
 import { Router } from "@angular/router";
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,8 +16,10 @@ export class LoginComponent implements OnInit {
   errors = null
 
   constructor(private loginService: AuthService,
+
     private fb: FormBuilder,
     public router: Router,) {
+
   }
 
   ngOnInit(): void {
