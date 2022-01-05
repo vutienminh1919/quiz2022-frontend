@@ -49,7 +49,7 @@ export class CategoryEditComponent implements OnInit {
         next: (res) => {
           console.log(res);
           this.message = res.message ? res.message :alert( 'Sửa danh mục câu hỏi thành công!');
-          this.router.navigate(['category/list'])
+          this.router.navigate(['categories/list'])
         },
         error: (e) => console.error(e)
       });
