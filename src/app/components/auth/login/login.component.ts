@@ -1,8 +1,9 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validator, Validators} from "@angular/forms";
-import {AuthService} from "../../../service/auth.service";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validator, Validators } from "@angular/forms";
+import { AuthService } from "../../../service/auth.service";
 
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
+
 
 @Component({
   selector: 'app-login',
@@ -15,8 +16,10 @@ export class LoginComponent implements OnInit {
   errors = null
 
   constructor(private loginService: AuthService,
-              private fb: FormBuilder,
-              public router: Router,) {
+
+    private fb: FormBuilder,
+    public router: Router,) {
+
   }
 
   ngOnInit(): void {
@@ -29,14 +32,14 @@ export class LoginComponent implements OnInit {
   login() {
     this.data = this.loginForm.value
     // console.log(this.data)
-this.loginService.login(this.data).subscribe(data =>{
-  console.log(data, '12345')
-  localStorage.setItem('token', data.access_token)
-  // @ts-ignore
-  console.log(localStorage.getItem('token'));
-// @ts-ignore
-  this.router.navigate(['/categories/list'])
-})
+    this.loginService.login(this.data).subscribe(data => {
+      console.log(data, '12345')
+      localStorage.setItem('token', data.access_token)
+      // @ts-ignore
+      console.log(localStorage.getItem('token'));
+      // @ts-ignore
+      this.router.navigate(['/categories/list'])
+    })
 
 
   }
