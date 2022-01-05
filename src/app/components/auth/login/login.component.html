@@ -1,6 +1,7 @@
 <p>login works!</p>
-<form>
-  <input type="text" placeholder="email">
-  <input type="text" placeholder="password">
-  <button type="submit">Sign up</button>
+<form *ngIf="loginForm" [formGroup]="loginForm" (ngSubmit)="login()">
+  <input type="text" placeholder="email" formControlName="email">
+  <input type="text" placeholder="password" formControlName="password">
+  <button type="submit">login</button>
+
 </form>
