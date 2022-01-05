@@ -29,17 +29,22 @@ export class LoginComponent implements OnInit {
   login() {
     this.data = this.loginForm.value
     // console.log(this.data)
-this.loginService.login(this.data).subscribe(data =>{
-  console.log(data, '12345')
-  localStorage.setItem('token', data.access_token)
-  // @ts-ignore
-  console.log(localStorage.getItem('token'));
-// @ts-ignore
-  this.router.navigate(['/categories/list'])
-})
+    this.loginService.login(this.data).subscribe(data => {
+      console.log(data, '12345')
+      localStorage.setItem('token', data.access_token)
+      // @ts-ignore
+      console.log(localStorage.getItem('token'));
+
+      if (data.status_code == 500) {
+        this.router.navigate(['/auth/login'])
+      } else {
+        this.router.navigate(['/categories/list'])
+      }
+    })
 
 
   }
+
   // logout(){
   //   this.loginService.logout().subscribe(data => {
   //     console.log(data)
