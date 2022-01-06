@@ -1,0 +1,20 @@
+<p>answer-create works!</p>
+
+<form [formGroup]="answerForm" (ngSubmit)="submit()">
+  <table>
+    <tr>
+      <td>Tên cau hoi:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td><input type="number" formControlName="question_id"></td>
+    </tr>
+    <tr>
+      <td><input type="number" formControlName="correct"></td>
+    </tr>
+      <td>
+        <button>Tạo mới</button>
+      </td>
+
+  </table>
+</form>

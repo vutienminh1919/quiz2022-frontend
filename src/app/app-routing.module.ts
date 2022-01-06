@@ -2,10 +2,20 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {RegisterComponent} from "./components/auth/register/register.component";
 import {LoginComponent} from "./components/auth/login/login.component";
+import {HomeComponent} from "./components/frontend/layout/home/home.component";
+import {MasterComponent} from "./components/frontend/master/master.component";
 
 
 
 const routes: Routes = [
+  {
+    path: '',
+    component: MasterComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
   {
     path: 'auth',
     children: [
@@ -23,6 +33,10 @@ const routes: Routes = [
   {
     path: 'categories',
     loadChildren: () => import('../app/components/category/category.module').then(module => module.CategoryModule)
+  },
+  {
+    path: 'answers',
+    loadChildren: () => import('../app/components/answer/answer.module').then(module => module.AnswerModule)
   }];
 
 @NgModule({

@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
         alert('sai ten dang nhap hoac mat khau')
         this.router.navigate(['/auth/login'])
       } else {
-        this.router.navigate(['/categories/list'])
+        this.router.navigate(['/home'])
       }
 
 
@@ -50,9 +50,5 @@ export class LoginComponent implements OnInit {
 
   }
 
-  // logout(){
-  //   this.loginService.logout().subscribe(data => {
-  //     console.log(data)
-  //   })
-  // }
+
 }

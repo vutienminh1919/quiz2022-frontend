@@ -17,6 +17,8 @@ import { FooterComponent } from './components/frontend/layout/core/footer/footer
 import { NavbarComponent } from './components/frontend/layout/core/navbar/navbar.component';
 import { HeaderComponent } from './components/frontend/layout/core/header/header.component';
 
+import {AnswerModule} from "./components/answer/answer.module";
+
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { HeaderComponent } from './components/frontend/layout/core/header/header
     HomeComponent,
     FooterComponent,
     NavbarComponent,
-    HeaderComponent
+    HeaderComponent,
+
+
 
   ],
   imports: [
@@ -37,6 +41,7 @@ import { HeaderComponent } from './components/frontend/layout/core/header/header
     ReactiveFormsModule,
     HttpClientModule,
     CategoryModule,
+    AnswerModule
 
   ],
   providers: [],

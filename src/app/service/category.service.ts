@@ -22,7 +22,7 @@ export class CategoryService {
   }
 
   getAll(): Observable<Category[]> {
-    return this.http.get<Category[]>(API_URL + '/categories');
+    return this.http.get<Category[]>(API_URL + '/categories', {headers:{'Authorization': `Bearer ${localStorage.getItem('token')} `}});
   }
 
   saveCategory(category: any): Observable<any> {

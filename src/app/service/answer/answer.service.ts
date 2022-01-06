@@ -24,6 +24,9 @@ export class AnswerService {
   deleteAnswer(id: number): Observable<any> {
     return this.http.delete<any>(`${API_URL}/answers/${id}`);
   }
+  findById(id: number): Observable<any> {
+    return this.http.get(`${API_URL}/answers/${id}` );
+  }
 
 
 }
