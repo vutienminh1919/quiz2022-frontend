@@ -21,7 +21,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'category',
+    path: 'categories',
     loadChildren: () => import('../app/components/category/category.module').then(module => module.CategoryModule)
   },
   {
