@@ -23,6 +23,6 @@ export class AuthService {
   }
   logout(): Observable<any>{
     //@ts-ignore
-    return this.http.post<any>(API_URL + '/logout',null, {headers: {'Authorization': 'Bearer 18|ptuc9UtxCjwu1QvxtRF2yjBuapogaJNifsb8WA39' } });
+    return this.http.post<any>(API_URL + '/logout',null, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')} ` } });
   }
 }
