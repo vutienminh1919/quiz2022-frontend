@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 import {Router} from "@angular/router";
 import {AuthService} from "../../../service/auth.service";
@@ -18,9 +18,9 @@ users: any[]= [];
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
-      name: [''],
-      email: [''],
-      password: [''],
+      name: ['',[Validators.required,Validators.minLength(6)]],
+      email: ['',[Validators.required, Validators.email]],
+      password: ['',[Validators.required, Validators.minLength(8)]],
     })
   }
   register() {

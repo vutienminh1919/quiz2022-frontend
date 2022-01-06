@@ -12,9 +12,9 @@ export class AuthService {
 
   constructor(private http: HttpClient) {
   }
-  login(): Observable<any> {
+  login(user: any): Observable<any> {
     //@ts-ignore
-    return this.http.post<any>(API_URL + '/login');
+    return this.http.post<any>(API_URL + '/login',user);
   }
 
   register(user: any): Observable<any>{
@@ -23,6 +23,6 @@ export class AuthService {
   }
   logout(): Observable<any>{
     //@ts-ignore
-    return this.http.post<any>(API_URL + '/logout');
+    return this.http.post<any>(API_URL + '/logout',null, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')} ` } });
   }
 }

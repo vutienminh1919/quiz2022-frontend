@@ -11,6 +11,13 @@ import {CategoryModule} from "./components/category/category.module";
 import {RegisterComponent} from "./components/auth/register/register.component";
 
 import {LoginComponent} from "./components/auth/login/login.component";
+import { MasterComponent } from './components/frontend/master/master.component';
+import { HomeComponent } from './components/frontend/layout/home/home.component';
+import { FooterComponent } from './components/frontend/layout/core/footer/footer.component';
+import { NavbarComponent } from './components/frontend/layout/core/navbar/navbar.component';
+import { HeaderComponent } from './components/frontend/layout/core/header/header.component';
+
+import {AnswerModule} from "./components/answer/answer.module";
 
 
 
@@ -18,7 +25,14 @@ import {LoginComponent} from "./components/auth/login/login.component";
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    MasterComponent,
+    HomeComponent,
+    FooterComponent,
+    NavbarComponent,
+    HeaderComponent,
+
+
 
   ],
   imports: [
@@ -27,6 +41,7 @@ import {LoginComponent} from "./components/auth/login/login.component";
     ReactiveFormsModule,
     HttpClientModule,
     CategoryModule,
+    AnswerModule
 
   ],
   providers: [],
