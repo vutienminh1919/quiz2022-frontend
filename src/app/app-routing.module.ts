@@ -31,8 +31,8 @@ const routes: Routes = [
   },
 
   {
-    path: 'categories',
-    loadChildren: () => import('../app/components/category/category.module').then(module => module.CategoryModule)
+    path: 'question',
+    loadChildren: () => import('../app/components/question/question.module').then(module => module.QuestionModule)
   },
   {
     path: 'answers',
