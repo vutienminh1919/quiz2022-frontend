@@ -1,1 +1,26 @@
-<p>test-edit works!</p>
+<h1>Cập nhật bài kiểm tra</h1>
+<div *ngIf="currentTest.id" class="edit-form">
+  <h4>Test</h4>
+  <form>
+    <div class="form-group">
+      <label>Title</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        [(ngModel)]="currentTest.title"
+        name="title"
+      />
+    </div>
+
+  </form>
+
+
+  <button
+    type="submit"
+    class="badge badge-success mb-2"
+    (click)="updateTest()"
+  >
+    Update
+  </button>
+</div>

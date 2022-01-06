@@ -1,1 +1,9 @@
-<p>test-create works!</p>
+<h1>Tạo bài kiểm tra mới</h1>
+<div>
+  <form  [formGroup]="testForm" (ngSubmit)="submit()">
+    <label>Tên bài kiểm tra:</label>
+    <input type="text" formControlName="title">
+
+    <input type="submit" value="Tạo mới">
+  </form>
+</div>

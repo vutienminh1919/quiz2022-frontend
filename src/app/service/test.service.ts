@@ -17,7 +17,7 @@ export class TestService {
   }
 
   saveTest(test: any): Observable<Test> {
-    return this.http.post(API_URL+'tests', test)
+    return this.http.post(API_URL+'/tests', test)
   }
 
   findById(id: number): Observable<Test> {

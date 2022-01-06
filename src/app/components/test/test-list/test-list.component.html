@@ -1,15 +1,29 @@
 <h2>Danh sách test</h2>
-<table>
+<a routerLink="/test/create">
+  <button class="button">Tạo mới bài kiểm tra</button>
+</a>
+
+
+<table id="tests">
   <tr>
-    <td>STT</td>
-    <td>Name</td>
-    <td>Point</td>
-    <td>Question</td>
+    <th>STT</th>
+    <th>Title</th>
+    <th colspan="3">#</th>
   </tr>
   <tr *ngFor="let test of tests; index as i">
-    <td>{{i+1}}</td>
-    <td>{{ test.name}}</td>
-    <td>{{ test.point}}</td>
-    <td *ngFor="let q of test.questions">{{ q.name}}</td>
+    <td>{{i + 1}}</td>
+    <td>{{ test.title}}</td>
+    <!--    <td *ngFor="let q of test.questions">{{ q.name}}</td>-->
+    <td><a [routerLink]="['/test/update',test.id]">
+      <button class="button button2">Edit</button>
+      </a></td>
+    <td>
+      <button class="button button3" (click)="delete(i)">Delete</button>
+    </td>
+    <td>
+      <button class="button button4">Go to Quiz</button>
+    </td>
+
   </tr>
+
 </table>

@@ -24,4 +24,15 @@ export class TestListComponent implements OnInit {
     })
   }
 
+  delete(i: any) {
+    const test = this.tests[i];
+    // @ts-ignore
+    this.testService.deleteTest(test.id).subscribe(res => {
+      this.tests = this.tests.filter(
+        n => n.id !== test.id
+      )
+    })
+
+  }
+
 }
