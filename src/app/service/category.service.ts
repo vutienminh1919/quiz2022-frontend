@@ -22,19 +22,19 @@ export class CategoryService {
   }
 
   getAll(): Observable<Category[]> {
-    return this.http.get<Category[]>(API_URL + '/categories',);
+    return this.http.get<Category[]>(API_URL + '/categories');
   }
 
   saveCategory(category: any): Observable<any> {
-    return this.http.post(API_URL + '/categories', category, );
+    return this.http.post(API_URL + '/categories', category );
   }
 
   findById(id: number): Observable<Category> {
-    return this.http.get(`${API_URL}/categories/${id}`, );
+    return this.http.get(`${API_URL}/categories/${id}` );
   }
 
   updateCategory(id: any, category: any): Observable<any> {
-    return this.http.put(`${API_URL}/categories/${id}`, category, );
+    return this.http.put(`${API_URL}/categories/${id}`, category );
   }
 
   deleteCategory(id: number): Observable<Category> {

@@ -4,6 +4,7 @@ import {AuthService} from "../../../service/auth.service";
 
 import {Router} from "@angular/router";
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,6 +18,7 @@ export class LoginComponent implements OnInit {
   constructor(private loginService: AuthService,
               private fb: FormBuilder,
               public router: Router,) {
+
   }
 
   ngOnInit(): void {
@@ -34,12 +36,15 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', data.access_token)
       // @ts-ignore
       console.log(localStorage.getItem('token'));
+      if (data.status_code === 500) {
 
-      if (data.status_code == 500) {
+        alert('sai ten dang nhap hoac mat khau')
         this.router.navigate(['/auth/login'])
       } else {
         this.router.navigate(['/categories/list'])
       }
+
+
     })
 
 
