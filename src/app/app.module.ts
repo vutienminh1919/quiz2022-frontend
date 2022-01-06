@@ -11,6 +11,9 @@ import {CategoryModule} from "./components/category/category.module";
 import {RegisterComponent} from "./components/auth/register/register.component";
 
 import {LoginComponent} from "./components/auth/login/login.component";
+import { TestListComponent } from './components/test/test-list/test-list.component';
+import { TestCreateComponent } from './components/test/test-create/test-create.component';
+import { TestEditComponent } from './components/test/test-edit/test-edit.component';
 
 
 
@@ -18,7 +21,8 @@ import {LoginComponent} from "./components/auth/login/login.component";
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+
 
   ],
   imports: [

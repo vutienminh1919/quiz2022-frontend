@@ -23,7 +23,12 @@ const routes: Routes = [
   {
     path: 'category',
     loadChildren: () => import('../app/components/category/category.module').then(module => module.CategoryModule)
-  }];
+  },
+  {
+    path: 'test',
+    loadChildren: ()=> import('../app/components/test/test.module').then(module=>module.TestModule)
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

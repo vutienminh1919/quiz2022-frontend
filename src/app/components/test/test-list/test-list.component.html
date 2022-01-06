@@ -1,0 +1,15 @@
+<h2>Danh sách test</h2>
+<table>
+  <tr>
+    <td>STT</td>
+    <td>Name</td>
+    <td>Point</td>
+    <td>Question</td>
+  </tr>
+  <tr *ngFor="let test of tests; index as i">
+    <td>{{i+1}}</td>
+    <td>{{ test.name}}</td>
+    <td>{{ test.point}}</td>
+    <td *ngFor="let q of test.questions">{{ q.name}}</td>
+  </tr>
+</table>
