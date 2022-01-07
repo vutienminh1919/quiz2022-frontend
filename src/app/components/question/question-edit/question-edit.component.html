@@ -1,0 +1,21 @@
+<div class="container">
+  <form *ngIf="formEditQuestion" [formGroup]="formEditQuestion" (ngSubmit)="editQuestion(id)" >
+    <div class="form-group">
+      <label for="">Test</label>
+      <input type="text" class="form-control" formControlName="test_id">
+    </div>
+    <div class="form-group">
+      <label for="">Question</label>
+      <input type="text" class="form-control" formControlName="question_name">
+    </div>
+    <div class="form-group">
+      <label for="">Option</label>
+      <input type="text" class="form-control" formControlName="options">
+    </div>
+    <div class="form-group">
+      <label for="">Correct</label>
+      <input type="text" class="form-control" formControlName="correct">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

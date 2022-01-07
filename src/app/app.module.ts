@@ -18,6 +18,8 @@ import { NavbarComponent } from './components/frontend/layout/core/navbar/navbar
 import { HeaderComponent } from './components/frontend/layout/core/header/header.component';
 
 import {AnswerModule} from "./components/answer/answer.module";
+import {QuestionModule} from "./components/question/question.module";
+
 
 
 
@@ -31,9 +33,6 @@ import {AnswerModule} from "./components/answer/answer.module";
     FooterComponent,
     NavbarComponent,
     HeaderComponent,
-
-
-
   ],
   imports: [
     BrowserModule,
@@ -41,8 +40,8 @@ import {AnswerModule} from "./components/answer/answer.module";
     ReactiveFormsModule,
     HttpClientModule,
     CategoryModule,
-    AnswerModule
-
+    AnswerModule,
+    QuestionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
