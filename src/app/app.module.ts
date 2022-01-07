@@ -11,6 +11,7 @@ import {CategoryModule} from "./components/category/category.module";
 import {RegisterComponent} from "./components/auth/register/register.component";
 
 import {LoginComponent} from "./components/auth/login/login.component";
+
 import { MasterComponent } from './components/frontend/master/master.component';
 import { HomeComponent } from './components/frontend/layout/home/home.component';
 import { FooterComponent } from './components/frontend/layout/core/footer/footer.component';
@@ -28,6 +29,7 @@ import {QuestionModule} from "./components/question/question.module";
     AppComponent,
     RegisterComponent,
     LoginComponent,
+
     MasterComponent,
     HomeComponent,
     FooterComponent,
