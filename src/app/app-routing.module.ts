@@ -6,7 +6,6 @@ import {HomeComponent} from "./components/frontend/layout/home/home.component";
 import {MasterComponent} from "./components/frontend/master/master.component";
 
 
-
 const routes: Routes = [
   {
     path: '',
@@ -31,14 +30,12 @@ const routes: Routes = [
   },
 
   {
+    path: 'tests',
+    loadChildren: () => import('../app/components/test/test.module').then(module => module.TestModule)
+  },
 
   {
-    path: 'test',
-    loadChildren: ()=> import('../app/components/test/test.module').then(module=>module.TestModule)
-  }
-];
-
-    path: 'question',
+    path: 'questions',
     loadChildren: () => import('../app/components/question/question.module').then(module => module.QuestionModule)
   },
   {

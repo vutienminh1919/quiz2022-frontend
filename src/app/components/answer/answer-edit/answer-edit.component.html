@@ -8,10 +8,17 @@
       <input
         type="text"
         class="form-control"
-        id="title"
-        [(ngModel)]="currentAnswer.name"
-        name="name"
+        [(ngModel)]="currentAnswer.option"
+        name="name" placeholder="option"
       />
+      <input type="text"
+      class="form-control"
+      [(ngModel)]="currentAnswer.question_id"
+      name="question"
+      />
+      <input type="text" class="form-control"
+             [(ngModel)]="currentAnswer.correct"
+             name="correct">
     </div>
 
   </form>
