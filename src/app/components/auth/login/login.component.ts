@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validator, Validators } from "@angular/forms";
-import { AuthService } from "../../../service/auth.service";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validator, Validators} from "@angular/forms";
+import {AuthService} from "../../../service/auth.service";
 
-import { Router } from "@angular/router";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -16,9 +16,8 @@ export class LoginComponent implements OnInit {
   errors = null
 
   constructor(private loginService: AuthService,
-
-    private fb: FormBuilder,
-    public router: Router,) {
+              private fb: FormBuilder,
+              public router: Router,) {
 
   }
 
@@ -37,15 +36,19 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', data.access_token)
       // @ts-ignore
       console.log(localStorage.getItem('token'));
-      // @ts-ignore
-      this.router.navigate(['/categories/list'])
+      if (data.status_code === 500) {
+
+        alert('sai ten dang nhap hoac mat khau')
+        this.router.navigate(['/auth/login'])
+      } else {
+        this.router.navigate(['/home'])
+      }
+
+
     })
 
 
   }
-  // logout(){
-  //   this.loginService.logout().subscribe(data => {
-  //     console.log(data)
-  //   })
-  // }
+
+
 }
