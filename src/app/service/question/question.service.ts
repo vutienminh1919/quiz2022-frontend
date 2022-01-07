@@ -11,22 +11,28 @@ export class QuestionService {
   constructor(private http: HttpClient) { }
 
   getAll() :Observable<any>{
-    return this.http.get(environment.apiUrl + '');
+    return this.http.get<any>(environment.apiUrl + '/questions', {headers:{'Authorization': `Bearer ${localStorage.getItem('token')} `}});
+
   }
 
   addQuestion(data:any) : Observable<any>{
-    return this.http.post(environment.apiUrl,data);
+    return this.http.post<any>(environment.apiUrl + '/questions', data)
+
   }
 
   delete(id:number):Observable<any> {
-    return this.http.delete(environment.apiUrl + '/' +id);
+    // return this.http.delete(environment.apiUrl + '/' +id);
+    return this.http.delete<any>(`${environment.apiUrl}/questions/${id}`);
+
   }
   edit(id:number,data :any) :Observable<any> {
-    return this.http.put(
-      environment.apiUrl + '/' +id, data
-    );
+
+    return this.http.put(`${environment.apiUrl}/questions/${id}`, data);
+
   }
   findById(id:number):Observable<any> {
-    return this.http.get(environment.apiUrl + '/' +id);
+    // return this.http.get(environment.apiUrl + '/' +id);
+    return this.http.get(`${environment.apiUrl}/questions/${id}` );
+
   }
 }

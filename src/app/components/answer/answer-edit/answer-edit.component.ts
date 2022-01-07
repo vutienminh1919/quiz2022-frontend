@@ -15,7 +15,7 @@ export class AnswerEditComponent implements OnInit {
 
   @Input() viewMode = false;
   @Input() currentAnswer : Answer = {
-    name: '',
+    option: '',
     question_id: '',
     correct: ''
   };

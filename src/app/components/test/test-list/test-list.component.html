@@ -1,5 +1,6 @@
 <h2>Danh sách bài kiểm tra</h2>
-<a routerLink="/test/create">
+
+<a routerLink="/tests/create">
   <button class="button">Tạo mới bài kiểm tra</button>
 </a>
 
@@ -14,7 +15,7 @@
     <td>{{i + 1}}</td>
     <td>{{ test.title}}</td>
     <!--    <td *ngFor="let q of test.questions">{{ q.name}}</td>-->
-    <td><a [routerLink]="['/test/update',test.id]">
+    <td><a [routerLink]="['/tests/update',test.id]">
       <button class="button button2">Edit</button>
       </a></td>
     <td>
