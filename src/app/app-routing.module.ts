@@ -6,7 +6,6 @@ import {HomeComponent} from "./components/frontend/layout/home/home.component";
 import {MasterComponent} from "./components/frontend/master/master.component";
 
 
-
 const routes: Routes = [
   {
     path: '',
@@ -31,19 +30,23 @@ const routes: Routes = [
   },
 
   {
-    path: 'categories',
-    loadChildren: () => import('../app/components/category/category.module').then(module => module.CategoryModule)
-  },
-  {
     path: 'test',
-    loadChildren: ()=> import('../app/components/test/test.module').then(module=>module.TestModule)
+    loadChildren: () => import('../app/components/test/test.module').then(module => module.TestModule)
   },
   {
     path: 'answers',
     loadChildren: () => import('../app/components/answer/answer.module').then(module => module.AnswerModule)
-  }
-];
+  },
 
+  {
+
+    path: 'question',
+    loadChildren: () => import('../app/components/question/question.module').then(module => module.QuestionModule)
+  },
+  {
+    path: 'answers',
+    loadChildren: () => import('../app/components/answer/answer.module').then(module => module.AnswerModule)
+  }];
 
 
 @NgModule({
