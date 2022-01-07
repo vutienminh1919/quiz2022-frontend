@@ -1,0 +1,27 @@
+<p>answer-edit works!</p>
+
+<div *ngIf="currentAnswer.id" class="edit-form">
+  <h4>Category</h4>
+  <form>
+    <div class="form-group">
+      <label>Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="title"
+        [(ngModel)]="currentAnswer.name"
+        name="name"
+      />
+    </div>
+
+  </form>
+
+
+  <button
+    type="submit"
+    class="badge badge-success mb-2"
+    (click)="updateAnswer()"
+  >
+    Update
+  </button>
+</div>

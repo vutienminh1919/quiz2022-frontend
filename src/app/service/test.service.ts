@@ -25,6 +25,7 @@ export class TestService {
   }
 
   updateTest(id: any, test: any): Observable<any> {
+    console.log(id, test, "abc")
     return this.http.put(`${API_URL}/tests/${id}`, test)
   }
 
