@@ -6,7 +6,7 @@ import {QuestionEditComponent} from "./question-edit/question-edit.component";
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'list',
     component: QuestionListComponent
   },
   {
