@@ -4,21 +4,45 @@
     <span class="error animated tada" id="msg"></span>
     <form name="form1" class="box" *ngIf="loginForm" [formGroup]="loginForm" (ngSubmit)="login()">
       <h4>FUNNY<span>  QUIZ</span></h4><br>
-      <h5>Hãy đăng nhập </h5>
-      <input type="text" formControlName="email" placeholder="Email" autocomplete="off">
+      <h5 style="margin-bottom: 10px">Hãy đăng nhập </h5>
+
+
+
+      <input type="text" id="email" formControlName="email" placeholder="Email" autocomplete="off" required>
+      <!--      <div *ngIf="email?.invalid && (email?.dirty)"-->
+      <!--           class="alert alert-danger">-->
+      <div *ngIf="email?.invalid && (email?.dirty || email?.touched)"><
+      <p  style="color: red; margin-bottom: 10px" *ngIf="email?.errors?.['required']">
+        Email không được để trống
+      </p>
+      <p style="color: red" *ngIf="email?.errors?.['email']">
+        Không đúng định dạng email
+      </p>
+            </div>
       <i class="typcn typcn-eye" id="eye"></i>
-      <input type="password" formControlName="password" placeholder="Mật khẩu" id="pwd" autocomplete="off">
+      <input type="password" formControlName="password" placeholder="Mật khẩu" id="pwd" autocomplete="off" required>
+      <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+      <p style="color: red" *ngIf="password?.errors?.['required']">
+        Mật khẩu không được để trống
+      </p>
+      </div>
+<!--      <p style="color: red" *ngIf="password?.errors?.['min']">-->
+<!--        Mật khẩu phải từ 8 ký tự trở lên-->
+<!--      </p><br>-->
+      <button [disabled]="!loginForm.valid" type="submit" value="" class="btn1">Dang nhap</button>
+
 
       <input type="submit" value="Sign in" class="btn1">
       <div class="text-cent">
         <br>
         <br>
-        <br> 
+        <br>
         <a routerLink="/auth/register">Đăng ký</a>
-        <a href=" "> Quên mật khẩu</a>    
+        <a href=" "> Quên mật khẩu</a>
       </div>
+
     </form>
-  
+
   </div>
 </div>
 

@@ -10,21 +10,36 @@
       Tên
     </label>
     <input  class="login__input" type="text" formControlName="name"/>
-
+    <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+    <p style="color: red" *ngIf="name?.errors?.['required']">
+      Tên không được để trống
+    </p>
+    </div>
     <label class="login__label">
       Email
     </label>
     <input  class="login__input" type="text" formControlName="email" />
+    <div *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+    <p style="color: red" *ngIf="email?.errors?.['required']">
+      Email không được để trống
+    </p>
+    <p style="color: red" *ngIf="email?.errors?.['email']">
+      Không đúng định dạng email
+    </p>
+    </div>
     <label  class="login__label">
       Mật khẩu
     </label>
     <input  class="login__input" type="password" formControlName="password" /><br>
-<!--    <label class="login__label" >-->
-<!--Nhap lai mat khau-->
-<!--    </label>-->
-<!--    <input  class="login__input" type="password" />-->
-
-    <button class="login__submit" type="submit">Đăng ký</button>
+    <div *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+    <p style="color: red" *ngIf="password?.errors?.['required']">
+      Mật khẩu không được để trống
+    </p>
+    <p style="color: red" *ngIf="password?.errors?.['minLength']">
+      Mật khẩu phải trên 8 ký tự
+    </p>
+    </div>
+    <button [disabled]="!registerForm.valid" class="login__submit" type="submit">Đăng ký</button>
     <button  routerLink="/auth/login" class="login__back" type="submit">Hủy</button>
   </form>
 

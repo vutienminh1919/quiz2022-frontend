@@ -20,6 +20,13 @@ import { HeaderComponent } from './components/frontend/layout/core/header/header
 
 import {AnswerModule} from "./components/answer/answer.module";
 import {QuestionModule} from "./components/question/question.module";
+import { AdminComponent } from './components/frontend/layout/admin/admin.component';
+
+import { QuizComponent } from './components/frontend/layout/home/quiz/quiz.component';
+import { TopicComponent } from './components/frontend/layout/home/topic/topic.component';
+import { ResultComponent } from './components/frontend/layout/home/result/result.component';
+import { NavbarHomeComponent } from './components/frontend/layout/home/navbar-home/navbar-home.component';
+
 
 
 
@@ -29,12 +36,19 @@ import {QuestionModule} from "./components/question/question.module";
     AppComponent,
     RegisterComponent,
     LoginComponent,
-
     MasterComponent,
     HomeComponent,
     FooterComponent,
     NavbarComponent,
     HeaderComponent,
+    AdminComponent,
+
+
+    QuizComponent,
+      TopicComponent,
+      ResultComponent,
+      NavbarHomeComponent,
+
   ],
   imports: [
     BrowserModule,
