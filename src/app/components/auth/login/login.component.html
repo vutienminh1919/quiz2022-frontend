@@ -7,6 +7,7 @@
       <h5 style="margin-bottom: 10px">Hãy đăng nhập </h5>
 
 
+
       <input type="text" id="email" formControlName="email" placeholder="Email" autocomplete="off" required>
       <!--      <div *ngIf="email?.invalid && (email?.dirty)"-->
       <!--           class="alert alert-danger">-->
@@ -30,8 +31,17 @@
 <!--      </p><br>-->
       <button [disabled]="!loginForm.valid" type="submit" value="" class="btn1">Dang nhap</button>
 
+
+      <input type="submit" value="Sign in" class="btn1">
+      <div class="text-cent">
+        <br>
+        <br>
+        <br>
+        <a routerLink="/auth/register">Đăng ký</a>
+        <a href=" "> Quên mật khẩu</a>
+      </div>
+
     </form>
-    <a routerLink="/auth/register" class="dnthave">Đăng ký</a>
 
   </div>
 </div>

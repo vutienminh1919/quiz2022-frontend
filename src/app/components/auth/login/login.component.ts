@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.data).subscribe(data => {
       console.log(data, '12345')
       localStorage.setItem('token', data.access_token)
+      localStorage.setItem('username', data.name)
       console.log(localStorage.getItem('token'));
       if (data.status_code === 500) {
         alert('sai ten dang nhap hoac mat khau')
