@@ -4,12 +4,17 @@ import {RegisterComponent} from "./components/auth/register/register.component";
 import {LoginComponent} from "./components/auth/login/login.component";
 import {HomeComponent} from "./components/frontend/layout/home/home.component";
 import {MasterComponent} from "./components/frontend/master/master.component";
+import {AdminComponent} from "./components/frontend/layout/admin/admin.component";
 
 
 const routes: Routes = [
   {
     path: '',
     component: MasterComponent
+  },
+  {
+    path: 'admin',
+    component: AdminComponent
   },
   {
     path: 'home',

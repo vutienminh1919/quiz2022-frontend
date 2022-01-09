@@ -1,5 +1,46 @@
-<button routerLink="/questions/list">danh sach cau hoi</button>
-<button routerLink="/answers/list">cau tra loi</button>
-<button routerLink="/tests/list">bai test</button>
-<button (click)="logout()">logout</button>
-<router-outlet></router-outlet>
+<h1> SPORT  QUIZ</h1>
+<div class="container">
+  <h3> Choose your favorite sport to START the Quiz </h3>
+
+  <button onclick="StartQuiz('Football')" class="kochak" type="button" value="1"> Football</button>
+  <button onclick="StartQuiz('Basketball')" class="kochak" type="button" value="2"> Basketball</button>
+  <button onclick="StartQuiz('Tennis')" class="kochak" type="button"value="3"> Tennis</button>
+  <button onclick="StartQuiz('Golf')" class="kochak" type="button" value="4"> Golf</button>
+
+  <br>
+  <br>
+
+
+
+
+
+</div>
+
+<div class="page" id="quiz-page"> </div>
+
+<div id="Football">
+  <h1>Football</h1>
+</div>
+
+
+<div id="Basketball">
+  <h1>Basketball</h1>
+</div>
+
+<div id="Tennis">
+  <h1>Tennis</h1>
+</div>
+
+<div id="Golf">
+  <h1>Golf</h1>
+</div>
+
+
+
+
+
+
+
+
+
+

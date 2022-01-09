@@ -1,0 +1,81 @@
+body{
+  background:#A2C159
+
+}
+
+h1 {
+  color: #FAFBFB;
+  font-family: 'Roboto', sans-serif;
+  font-size: 60px;
+  letter-spacing: 2px;
+  text-align: center;
+  text-shadow: .5px .5px grey;
+}
+
+h3{
+  color: Black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+  letter-spacing: 2px;
+  text-align: center;
+  text-shadow: .5px .5px grey;
+}
+
+button, Label {
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
+
+
+}
+
+
+
+Label{
+  display: inline-block;
+  padding: 0px 20px 10px 2px;
+
+}
+
+
+Label {
+  font-size: 20px;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:hover {
+  transition: background-color ;
+  background-color:red ;
+}
+
+button:active {
+  background-color: red ;
+}
+
+button {
+  color: white;
+  background-color:#A2C159 ;
+  font-size: 15px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.container {
+  background-color: #FAFBFB;
+  text-align: center;
+  margin: 0 auto;
+  padding: 12px;
+
+}
+
+.quiz-page{
+  display:block;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:100%;
+  height: 100%
+
+}

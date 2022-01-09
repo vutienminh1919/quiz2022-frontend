@@ -20,6 +20,7 @@ import { HeaderComponent } from './components/frontend/layout/core/header/header
 
 import {AnswerModule} from "./components/answer/answer.module";
 import {QuestionModule} from "./components/question/question.module";
+import { AdminComponent } from './components/frontend/layout/admin/admin.component';
 
 
 
@@ -35,6 +36,7 @@ import {QuestionModule} from "./components/question/question.module";
     FooterComponent,
     NavbarComponent,
     HeaderComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
