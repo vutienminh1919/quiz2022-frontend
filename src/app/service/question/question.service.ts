@@ -34,5 +34,22 @@ export class QuestionService {
     // return this.http.get(environment.apiUrl + '/' +id);
     return this.http.get(`${environment.apiUrl}/questions/${id}` );
 
+    // return this.http.get(environment.apiUrl + '/questions');
   }
+
+  // addQuestion(data:any) : Observable<any>{
+  //   return this.http.post(environment.apiUrl +'/questions',data);
+  // }
+  //
+  // delete(id:number):Observable<any> {
+  //   return this.http.delete(environment.apiUrl + '/questions' +id);
+  // }
+  // edit(id:number,data :any) :Observable<any> {
+  //   return this.http.put(
+  //     environment.apiUrl + '/questions' +id, data
+  //   );
+  // }
+  // findById(id:number):Observable<any> {
+  //   return this.http.get(environment.apiUrl + '/questions' +id);
+  // }
 }
