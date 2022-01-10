@@ -1,7 +1,7 @@
 
 
 <div class="container">
-    <button routerLink="/questions/create" class="btn btn-outline-primary">Thêm mới</button>
+    <button routerLink="../create" class="btn btn-outline-primary">Thêm mới</button>
   <table class="table">
     <thead class="thead-light">
     <tr>
@@ -17,7 +17,7 @@
 <tbody>
     <tr *ngFor="let question of questions;index as i">
       <td>{{i+1}}</td>
-      <td>{{ question.question_content}}</td>
+      <td>{{ (question.question_content.length>80)? (question.question_content | slice:0:80)+'..':(question.question_content)}}</td>
       <td>{{diff}}</td>
       <td>{{ question.category.category_name}}</td>
 
@@ -57,7 +57,7 @@
          <tbody>
          <tr>
            <td>{{question?.question_content}}</td>
-<!--           <td>{{question?.answers['answer_id']['answer_content']}}</td>-->
+<!--           <td>{{question?}}</td>-->
            <td></td>
          </tr>
 
@@ -68,4 +68,5 @@
     </div>
   </div>
 </div>
+
 
