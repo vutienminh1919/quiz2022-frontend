@@ -14,9 +14,9 @@ import {LoginComponent} from "./components/auth/login/login.component";
 
 import { MasterComponent } from './components/frontend/master/master.component';
 import { HomeComponent } from './components/frontend/layout/home/home.component';
-import { FooterComponent } from './components/frontend/layout/core/footer/footer.component';
-import { NavbarComponent } from './components/frontend/layout/core/navbar/navbar.component';
-import { HeaderComponent } from './components/frontend/layout/core/header/header.component';
+import { FooterComponent } from './components/frontend/layout/admin/core/footer/footer.component';
+import { NavbarComponent } from './components/frontend/layout/admin/core/navbar/navbar.component';
+import { HeaderComponent } from './components/frontend/layout/admin/core/header/header.component';
 
 import {AnswerModule} from "./components/answer/answer.module";
 import {QuestionModule} from "./components/question/question.module";
