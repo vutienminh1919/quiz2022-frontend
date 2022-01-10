@@ -11,7 +11,7 @@ export class QuestionService {
   constructor(private http: HttpClient) { }
 
   getAll() :Observable<any>{
-    return this.http.get<any>(environment.apiUrl + '/questions', {headers:{'Authorization': `Bearer ${localStorage.getItem('token')} `}});
+    return this.http.get<any>(environment.apiUrl + '/questions');
 
   }
 

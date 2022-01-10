@@ -51,7 +51,12 @@ const routes: Routes = [
   {
     path: 'answers',
     loadChildren: () => import('../app/components/answer/answer.module').then(module => module.AnswerModule)
-  }];
+  },
+  {
+    path: 'categories',
+    loadChildren: () => import('../app/components/category/category.module').then(module => module.CategoryModule)
+  },
+  ];
 
 
 @NgModule({

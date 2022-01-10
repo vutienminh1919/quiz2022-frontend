@@ -13,7 +13,8 @@ export class CategoryEditComponent implements OnInit {
 
   @Input() viewMode = false;
   @Input() currentCategory : Category = {
-    name: ''
+    category_name: '',
+    category_description: ''
   };
   message = '';
   categoryForm: FormGroup = new FormGroup({});

@@ -14,8 +14,10 @@ import {AnswerService} from "../../../service/answer/answer.service";
 export class AnswerEditComponent implements OnInit {
 
   @Input() viewMode = false;
+  // @ts-ignore
   @Input() currentAnswer : Answer = {
     option: '',
+    // @ts-ignore
     question_id: '',
     correct: ''
   };
