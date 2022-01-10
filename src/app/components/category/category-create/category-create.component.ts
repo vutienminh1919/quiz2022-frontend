@@ -10,7 +10,8 @@ import {Router} from "@angular/router";
 })
 export class CategoryCreateComponent implements OnInit {
   categoryForm: FormGroup= new FormGroup({
-    name: new FormControl(),
+    category_name: new FormControl(),
+    category_description: new FormControl(),
   });
 
   constructor(private categoryService: CategoryService,

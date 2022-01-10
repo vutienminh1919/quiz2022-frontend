@@ -1,6 +1,6 @@
 export interface Answer{
   id?: number;
-  option?: string;
-  question_id? : any;
+  answer_content?: string;
+  question_id? : number;
   correct? :any
 }

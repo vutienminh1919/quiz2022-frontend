@@ -47,6 +47,16 @@ const routes: Routes = [
   },
 
   {
+    path: 'test',
+    loadChildren: () => import('../app/components/test/test.module').then(module => module.TestModule)
+  },
+  {
+    path: 'answers',
+    loadChildren: () => import('../app/components/answer/answer.module').then(module => module.AnswerModule)
+  },
+
+  {
+
     path: 'tests',
     loadChildren: () => import('../app/components/test/test.module').then(module => module.TestModule)
   },
@@ -58,7 +68,12 @@ const routes: Routes = [
   {
     path: 'answers',
     loadChildren: () => import('../app/components/answer/answer.module').then(module => module.AnswerModule)
-  }];
+  },
+  {
+    path: 'categories',
+    loadChildren: () => import('../app/components/category/category.module').then(module => module.CategoryModule)
+  },
+  ];
 
 
 @NgModule({

@@ -1,15 +1,42 @@
 <div class="container">
-  <a routerLink="/questions/create"><button class="btn btn-success">Add New</button></a>
-  <table class="table table-dark">
+  <a routerLink="/questions/create">
+    <button class="btn btn-success">Add New</button>
+  </a>
+  <table>
     <tr>
-      <td>Test</td>
-      <td>Name</td>
+      <td>Content</td>
+      <td>Difficulty</td>
+      <td>Category</td>
+      <td></td>
     </tr>
-    <tr *ngFor="let question of questions;let i = index">
-      <td>{{question.test_id}}</td>
-      <td>{{question.question_name}}</td>
-      <td><button (click)="delete(i)" class="btn btn-danger">DELETE</button></td>
-      <td><button routerLink ="edit/{{question.id}}" class="btn btn-info">EDIT</button></td>
+    <tr *ngFor="let question of questions;index as i">
+      <td>{{ question.question_content}}</td>
+      <td>{{ question.difficulty}}</td>
+      <td>{{ question.category.category_name}}</td>
+
+      <td>
+        <button (click)="delete(i)" class="btn btn-danger">DELETE</button>
+      </td>
+      <td>
+        <button routerLink="edit/{{question.id}}" class="btn btn-info">EDIT</button>
+        <button routerLink="detail/{{question.id}}" class="btn btn-info">DETAIL</button>
+      </td>
     </tr>
   </table>
 </div>
+
+<!--  <a routerLink="/questions/create"><button class="btn btn-success">Add New</button></a>-->
+<!--  <table class="table table-dark">-->
+<!--    <tr>-->
+<!--      <td>Test</td>-->
+<!--      <td>Name</td>-->
+<!--    </tr>-->
+<!--    <tr *ngFor="let question of questions;let i = index">-->
+<!--      <td>{{question.test_id}}</td>-->
+<!--      <td>{{question.question_name}}</td>-->
+<!--      <td><button (click)="delete(i)" class="btn btn-danger">DELETE</button></td>-->
+<!--      <td><button routerLink ="edit/{{question.id}}" class="btn btn-info">EDIT</button></td>-->
+<!--    </tr>-->
+<!--    <tr *ngFor="let c of questions[1];index as j">{{ c.category_name}}</tr>-->
+
+<!--  </table>-->
