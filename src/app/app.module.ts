@@ -26,8 +26,6 @@ import { QuizComponent } from './components/frontend/layout/home/quiz/quiz.compo
 import { TopicComponent } from './components/frontend/layout/home/topic/topic.component';
 import { ResultComponent } from './components/frontend/layout/home/result/result.component';
 import { NavbarHomeComponent } from './components/frontend/layout/home/navbar-home/navbar-home.component';
-// import { QuizListComponent } from './components/quiz/quiz-list/quiz-list.component';
-// import { QuizCreateComponent } from './components/quiz/quiz-create/quiz-create.component';
 
 
 
@@ -47,10 +45,9 @@ import { NavbarHomeComponent } from './components/frontend/layout/home/navbar-ho
 
 
     QuizComponent,
-      TopicComponent,
-      ResultComponent,
-      NavbarHomeComponent,
-
+    TopicComponent,
+    ResultComponent,
+    NavbarHomeComponent,
 
   ],
   imports: [
@@ -63,6 +60,9 @@ import { NavbarHomeComponent } from './components/frontend/layout/home/navbar-ho
     QuestionModule
   ],
   providers: [],
+  exports: [
+    NavbarComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
