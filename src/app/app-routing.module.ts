@@ -73,6 +73,10 @@ const routes: Routes = [
     path: 'categories',
     loadChildren: () => import('../app/components/category/category.module').then(module => module.CategoryModule)
   },
+  {
+    path: 'quizzes',
+    loadChildren: () => import('../app/components/quiz/quiz.module').then(module=> module.QuizModule)
+  }
   ];
 
 
