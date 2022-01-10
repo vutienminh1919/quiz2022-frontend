@@ -32,35 +32,38 @@ import { NavbarHomeComponent } from './components/frontend/layout/home/navbar-ho
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    RegisterComponent,
-    LoginComponent,
-    MasterComponent,
-    HomeComponent,
-    FooterComponent,
-    NavbarComponent,
-    HeaderComponent,
-    AdminComponent,
+    declarations: [
+        AppComponent,
+        RegisterComponent,
+        LoginComponent,
+        MasterComponent,
+        HomeComponent,
+        FooterComponent,
+        NavbarComponent,
+        HeaderComponent,
+        AdminComponent,
 
 
-    QuizComponent,
-      TopicComponent,
-      ResultComponent,
-      NavbarHomeComponent,
+        QuizComponent,
+        TopicComponent,
+        ResultComponent,
+        NavbarHomeComponent,
 
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    CategoryModule,
-    AnswerModule,
-    QuestionModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        CategoryModule,
+        AnswerModule,
+        QuestionModule
+    ],
+    providers: [],
+    exports: [
+        NavbarComponent
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
