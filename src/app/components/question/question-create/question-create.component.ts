@@ -26,7 +26,7 @@ export class QuestionCreateComponent implements OnInit {
       question_content: [''],
       difficulty: [''],
       category: [''],
-      // answer: [''],
+      answer: [''],
 
     })
     this.getCategory();

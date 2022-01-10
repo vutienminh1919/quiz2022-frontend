@@ -9,6 +9,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { QuestionDetailComponent } from './question-detail/question-detail.component';
 
 
+
 @NgModule({
   declarations: [
     QuestionListComponent,
@@ -20,7 +21,8 @@ import { QuestionDetailComponent } from './question-detail/question-detail.compo
     CommonModule,
     QuestionRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+
   ]
 })
 export class QuestionModule { }
