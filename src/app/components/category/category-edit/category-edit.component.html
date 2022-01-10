@@ -3,13 +3,19 @@
   <h4>Category</h4>
   <form>
     <div class="form-group">
-      <label>Name</label>
+      <label>Category Name</label>
       <input
         type="text"
         class="form-control"
-        id="title"
-        [(ngModel)]="currentCategory.name"
-        name="name"
+        [(ngModel)]="currentCategory.category_name"
+        name="category_name"
+      />
+      <label>Category Description</label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="currentCategory.category_description"
+        name="category_description"
       />
     </div>
 
