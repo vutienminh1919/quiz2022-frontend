@@ -11,6 +11,7 @@ import {CategoryService} from "../../../service/category.service";
 })
 export class QuestionCreateComponent implements OnInit {
   answers: any[] = [];
+  answersResult: any[] = [];
   question: any[] = [];
   categories: any[] = [];
   formAddQuestion: FormGroup | any;
@@ -28,7 +29,7 @@ export class QuestionCreateComponent implements OnInit {
       question_content: [''],
       difficulty: [''],
       category_id: [''],
-      answers: [this.answers]
+      answers: [this.answersResult]
     })
     this.formAddAnswer = this.fb.group({
       answer_content: [''],
@@ -42,14 +43,19 @@ export class QuestionCreateComponent implements OnInit {
   submit() {
 
     let data = this.formAddQuestion?.value;
-    console.log(data)
+    console.log("data ===> ",data)
     // let data = this.question.push(this.answers)
     // console.log(data);
-    this.questionService.addQuestion(data).subscribe(question => {
-      this.question.unshift(data);
-      // this.route.navigate(["/questions/list"]);
+    this.questionService.addQuestion(data).subscribe(() => {
+      console.log('dau ham vao khong')
+      // question.unshift(data);
+      // console.log('question == ', question)
     })
+    // this.formAddQuestion.answers = this.answersResult;
+    // console.log('ket qua --> ', this.formAddQuestion.answers)
     this.formAddQuestion?.reset();
+    this.route.navigate(["questions/list"]);
+
   }
 
   getCategory() {
@@ -61,9 +67,16 @@ export class QuestionCreateComponent implements OnInit {
 
   submitAnswer() {
     let answer = this.formAddAnswer?.value;
+
+    console.log('answer == ' , answer)
     // console.log(answer)
     this.answers.unshift(answer);
-    console.log(this.answers)
+
+    for (let i=0; i<this.answers.length; i++) {
+      console.log('i = ', i)
+      console.log('chuyen == ', Object.values(this.answers[i]))
+      this.answersResult.push(Object.values(this.answers[i]));
+    }
     this.formAddAnswer?.reset();
   }
 
