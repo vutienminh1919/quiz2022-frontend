@@ -22,19 +22,22 @@ export class QuestionCreateComponent implements OnInit {
               private categoryService: CategoryService) {
   }
 
+
   ngOnInit(): void {
     this.formAddQuestion = this.fb.group({
       question_content: [''],
       difficulty: [''],
-      category: [''],
+      category_id: [''],
       answers: [this.answers]
     })
     this.formAddAnswer = this.fb.group({
       answer_content: [''],
       correct: ['']
     })
+
     this.getCategory();
   }
+
 
   submit() {
 

@@ -1,11 +1,15 @@
 <h1>Danh sách danh mục câu hỏi</h1>
 <a routerLink="/categories/create">Tạo mới danh mục</a>
-<table>
+<table class="table">
+  <thead class="table-dark">
   <tr>
     <td>STT</td>
     <td>Tên</td>
-    <td colspan="2"></td>
+    <td>Mô tả</td>
+    <td colspan="2">Hành động</td>
   </tr>
+  </thead>
+
   <tr *ngFor="let category of categories; index as i">
     <td>{{i + 1}}</td>
     <td>{{category.category_name}}</td>

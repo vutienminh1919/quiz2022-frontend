@@ -10,6 +10,7 @@ import {ResultComponent} from "./components/frontend/layout/home/result/result.c
 import {TopicComponent} from "./components/frontend/layout/home/topic/topic.component";
 import {LayoutComponent} from "./components/main/layout/layout.component";
 import {QuestionListComponent} from "./components/question/question-list/question-list.component";
+import {UserListComponent} from "./components/user/user-list/user-list.component";
 
 
 const routes: Routes = [
@@ -104,7 +105,10 @@ const routes: Routes = [
         path: 'categories',
         loadChildren: () => import('../app/components/category/category.module').then(module => module.CategoryModule)
       },
-
+      {
+        path: 'users',
+        component: UserListComponent
+      }
     ]
   }
 ];
