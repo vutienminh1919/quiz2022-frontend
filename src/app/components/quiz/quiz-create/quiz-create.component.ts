@@ -10,14 +10,14 @@ import {QuestionService} from "../../../service/question/question.service";
   styleUrls: ['./quiz-create.component.css']
 })
 export class QuizCreateComponent implements OnInit {
-
+  submitQuestion: any[] = [];
   questions: any[] = [];
 
   formAddQuiz: FormGroup = new FormGroup({
     name: new FormControl(),
     duration: new FormControl(),
     // published: new FormControl(),
-    questions: new FormArray([]),
+    // questions: new FormArray([]),
 
   })
 
@@ -32,7 +32,7 @@ export class QuizCreateComponent implements OnInit {
 
   submit() {
     const quiz = this.formAddQuiz.value;
-    console.log(quiz)
+    // console.log(quiz)
     this.quizService.addQuiz(quiz).subscribe(() => {
       this.formAddQuiz.reset();
       alert('Tạo thành công');
@@ -50,20 +50,29 @@ export class QuizCreateComponent implements OnInit {
   }
 
   // @ts-ignore
-  onCheckSubmit(event) {
-    const formArray: FormArray = this.formAddQuiz.get('questions') as FormArray;
+  onCheckSubmit(event, id) {
+    // console.log('event=', event.target.checked)
+    // const formArray: FormArray = this.formAddQuiz.get('questions') as FormArray;
+    // console.log(formArray.controls)
     if (event.target.checked) {
-      formArray.push(new FormControl(event.target.value));
-    } else {
-      let i: number = 0;
-      // @ts-ignore
-      formArray.controls.forEach((ctrl: FormControl) => {
-        if (ctrl.value == event.target.value) {
-          formArray.removeAt(i);
-          return;
-        }
-        i++;
-      });
+      this.submitQuestion.push(id);
+    }else{
+      this.submitQuestion = this.submitQuestion.filter( item =>{
+        return item != id
+      })
+
     }
   }
+  //     let i: number = 0;
+  //     // @ts-ignore
+  //     // formArray.controls.forEach((ctrl: FormControl) => {
+  //       if (ctrl.value == event.target.value) {
+  //         // @ts-ignore
+  //         this.submitQuestion.removeAt();
+  //         return;
+  //       }
+  //       i++;
+  //     });
+  //   }
+  // }
 }
