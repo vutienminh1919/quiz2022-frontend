@@ -49,7 +49,9 @@ import { UserListComponent } from './components/user/user-list/user-list.compone
     ResultComponent,
     NavbarHomeComponent
 
-    ],
+  ],
+
+
   imports: [
     BrowserModule,
     AppRoutingModule,

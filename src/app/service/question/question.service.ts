@@ -16,6 +16,8 @@ export class QuestionService {
   }
 
   addQuestion(data:any) : Observable<any>{
+    console.log('data o service ', data)
+    console.log('api o service ', environment.apiUrl+'/question')
     return this.http.post<any>(environment.apiUrl + '/questions', data)
 
   }
