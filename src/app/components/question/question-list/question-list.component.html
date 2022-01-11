@@ -1,7 +1,5 @@
-
-
 <div class="container">
-    <button routerLink="../create" class="btn btn-outline-primary">Thêm mới</button>
+  <button routerLink="../create" class="btn btn-outline-primary">Thêm mới</button>
   <table class="table">
     <thead class="thead-light">
     <tr>
@@ -14,11 +12,11 @@
       <td></td>
     </tr>
     </thead>
-<tbody>
+    <tbody>
     <tr *ngFor="let question of questions;index as i">
-      <td>{{i+1}}</td>
-      <td>{{ (question.question_content.length>80)? (question.question_content | slice:0:80)+'..':(question.question_content)}}</td>
-      <td>{{diff}}</td>
+      <td>{{i + 1}}</td>
+      <td>{{ (question.question_content.length > 80) ? (question.question_content | slice:0:80) + '..' : (question.question_content)}}</td>
+      <td>{{question.difficulty == 1 ? 'Dễ' : question.difficulty == 2 ? 'Vừa' : question.difficulty == 3 ? 'Khó' : '' }}</td>
       <td>{{ question.category.category_name}}</td>
 
       <td>
@@ -27,11 +25,12 @@
       <td>
         <button routerLink="/edit/{{question.id}}" class="btn btn-success"><i class="fas fa-edit"></i></button>
       </td>
-        <td>
-        <button (click)="show(question.id)" data-toggle="modal" data-target="#exampleModal" class="btn btn-info"><i class="fas fa-info-circle"></i></button>
+      <td>
+        <button (click)="show(question.id)" data-toggle="modal" data-target="#exampleModal" class="btn btn-info"><i
+          class="fas fa-info-circle"></i></button>
       </td>
     </tr>
-</tbody>
+    </tbody>
   </table>
 </div>
 
@@ -46,24 +45,23 @@
         </button>
       </div>
       <div class="modal-body">
-       <table class="table">
-         <thead>
-         <tr>
-           <th>Câu hỏi</th>
-           <th>Câu trả lời</th>
-           <th>Đúng/Sai</th>
-         </tr>
-         </thead>
-         <tbody>
-         <tr>
-           <td>{{question?.question_content}}</td>
-<!--           <td>{{question?}}</td>-->
-           <td></td>
-         </tr>
-
-         </tbody>
-
-       </table>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>{{question?.question_content}}</th>
+          </tr>
+          </thead>
+          <tr>
+            <td><b>Câu trả lời</b></td>
+            <td><b>Đúng/Sai</b></td>
+          </tr>
+          <tbody>
+          <tr *ngFor="let ans of question?.answers">
+            <td >{{ans.answer_content}}</td>
+            <td >{{ans.correct == 1 ? 'Đúng' : ans.correct == 0 ? 'Sai' : ''}}</td>
+          </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

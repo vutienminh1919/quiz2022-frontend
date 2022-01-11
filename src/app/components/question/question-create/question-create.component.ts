@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {QuestionService} from "../../../service/question/question.service";
 import {Router} from "@angular/router";
 import {CategoryService} from "../../../service/category.service";
@@ -10,10 +10,11 @@ import {CategoryService} from "../../../service/category.service";
   styleUrls: ['./question-create.component.css']
 })
 export class QuestionCreateComponent implements OnInit {
-
-  question: any[] = []
+  answers: any[] = [];
+  question: any[] = [];
   categories: any[] = [];
-  formAddQuestion?: FormGroup;
+  formAddQuestion: FormGroup | any;
+  formAddAnswer: FormGroup | any;
 
   constructor(private fb: FormBuilder,
               private questionService: QuestionService,
@@ -26,27 +27,41 @@ export class QuestionCreateComponent implements OnInit {
       question_content: [''],
       difficulty: [''],
       category: [''],
-      answer: [''],
-
+      answers: [this.answers]
+    })
+    this.formAddAnswer = this.fb.group({
+      answer_content: [''],
+      correct: ['']
     })
     this.getCategory();
   }
 
   submit() {
+
     let data = this.formAddQuestion?.value;
-    console.log(data);
+    console.log(data)
+    // let data = this.question.push(this.answers)
+    // console.log(data);
     this.questionService.addQuestion(data).subscribe(question => {
       this.question.unshift(data);
-      this.route.navigate(["/questions/list"]);
+      // this.route.navigate(["/questions/list"]);
     })
     this.formAddQuestion?.reset();
   }
 
   getCategory() {
     this.categoryService.getAll().subscribe(res => {
-      console.log(res);
+      // console.log(res);
       this.categories = res;
     })
+  }
+
+  submitAnswer() {
+    let answer = this.formAddAnswer?.value;
+    // console.log(answer)
+    this.answers.unshift(answer);
+    console.log(this.answers)
+    this.formAddAnswer?.reset();
   }
 
 }

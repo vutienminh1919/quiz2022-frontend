@@ -1,6 +1,6 @@
 <p>answer-list works!</p>
 
-<button class="btn btn-secondary" routerLink="/home">Quay lại</button>
+
 <table class="table">
 
   <thead class="table-dark">
@@ -16,7 +16,7 @@
   <tr *ngFor="let answer of answers; index as i">
     <td>{{i + 1}}</td>
     <td>{{answer.answer_content}}</td>
-    <td>{{answer.question_id}}</td>
+    <td>{{ (answer.question.question_content.length>80)? (answer.question.question_content | slice:0:80)+'..':(answer.question.question_content)}}</td>
     <td>{{answer.correct}}</td>
     <td><button class="btn btn-success" [routerLink]="['/answers/update',answer.id]">Edit</button></td>
     <td>
