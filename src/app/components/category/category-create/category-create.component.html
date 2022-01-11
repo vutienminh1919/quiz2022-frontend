@@ -1,18 +1,18 @@
 <h1>Tạo danh mục mới</h1>
 <form [formGroup]="categoryForm" (ngSubmit)="submit()">
-  <table>
+  <table class="table table-bordered">
     <tr>
       <td>Tên danh mục:</td>
       <td><input type="text" formControlName="category_name"></td>
     </tr>
     <tr>
       <td>Mô tả:</td>
-      <td><input type="text" formControlName="category_description"></td>
+      <td><textarea type="text" formControlName="category_description"></textarea></td>
     </tr>
     <tr>
       <td></td>
       <td>
-        <button>Tạo mới</button>
+        <button class="btn btn-outline-secondary">Tạo mới</button>
       </td>
     </tr>
   </table>

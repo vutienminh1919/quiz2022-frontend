@@ -6,13 +6,15 @@ import {QuizListComponent} from "./quiz-list/quiz-list.component";
 import { QuizDetailComponent } from './quiz-detail/quiz-detail.component';
 import {QuizCreateComponent} from "./quiz-create/quiz-create.component";
 import {ReactiveFormsModule} from "@angular/forms";
+import { QuizEditComponent } from './quiz-edit/quiz-edit.component';
 
 
 @NgModule({
   declarations: [
     QuizListComponent,
     QuizCreateComponent,
-    QuizDetailComponent
+    QuizDetailComponent,
+    QuizEditComponent
   ],
   imports: [
     CommonModule,
