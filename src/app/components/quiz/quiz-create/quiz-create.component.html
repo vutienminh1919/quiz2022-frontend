@@ -13,10 +13,10 @@
         <option value="4">60 minutes</option>
       </select>
     </div>
-    <div class="form-group">
-      <label>Published</label>
-      <input type="text" class="form-control" formControlName="published">
-    </div>
+<!--    <div class="form-group">-->
+<!--      <label>Published</label>-->
+<!--      <input type="text" class="form-control" formControlName="published">-->
+<!--    </div>-->
     <div *ngFor="let q of questions">
       <input formControlName="questions" type="checkbox" [value]="q.id" (change)="onCheckSubmit($event)"><label>{{q.question_content}}</label>
     </div>
