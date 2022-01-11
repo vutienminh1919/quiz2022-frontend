@@ -33,39 +33,37 @@ import { LayoutComponent } from './components/main/layout/layout.component';
 
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        RegisterComponent,
-        LoginComponent,
-        MasterComponent,
-        HomeComponent,
-        FooterComponent,
-        NavbarComponent,
-        HeaderComponent,
-        AdminComponent,
+  declarations: [
+    AppComponent,
+    RegisterComponent,
+    LoginComponent,
+    MasterComponent,
+    HomeComponent,
+    FooterComponent,
+    NavbarComponent,
+    HeaderComponent,
+    AdminComponent,
+    QuizComponent,
+    TopicComponent,
+    ResultComponent,
+    NavbarHomeComponent,
 
 
-        QuizComponent,
-        TopicComponent,
-        ResultComponent,
-        NavbarHomeComponent,
-        LayoutComponent,
-
-    ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        CategoryModule,
-        AnswerModule,
-        QuestionModule
-    ],
-    providers: [],
-    exports: [
-        NavbarComponent
-    ],
-    bootstrap: [AppComponent]
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    CategoryModule,
+    AnswerModule,
+    QuestionModule
+  ],
+  providers: [],
+  exports: [
+    NavbarComponent
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }
