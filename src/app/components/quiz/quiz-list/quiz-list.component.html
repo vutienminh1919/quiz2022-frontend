@@ -1,30 +1,29 @@
 <div class="container">
-  <a routerLink="/quizzes/create">
+  <a routerLink="/admin/quizzes/create">
     <button class="btn btn-success">Add New</button>
   </a>
   <table class="table">
     <tr>
       <th scope="col">Name</th>
       <th scope="col">Duration</th>
-      <th scope="col">Published</th>
-      <th scope="col">Question</th>
+      <!--      <th scope="col">Published</th>-->
       <td scope="col" colspan="2">Action</td>
     </tr>
     <tr *ngFor="let quiz of quizzes;index as i">
       <td>{{ quiz.name}}</td>
-      <td>{{ quiz.duration}}</td>
-      <td>{{ quiz.published}}</td>
-<!--      <td>{{ quiz.questions.question_content}}</td>-->
+      <td>{{quiz.duration == 1 ? '15 minutes' : quiz.duration == 2 ? '30 minutes' : quiz.duration == 3 ? '45 minutes' : quiz.duration == 4 ? '60 minutes' : ''}}</td>
 
-<!--      <td>-->
-<!--        <button (click)="delete(i)" class="btn btn-danger">DELETE</button>-->
-<!--      </td>-->
+      <!--      <td>-->
+      <!--        <button (click)="delete(i)" class="btn btn-danger">DELETE</button>-->
+      <!--      </td>-->
       <td>
-        <button routerLink="edit/{{quiz.id}}" class="btn btn-info">EDIT</button>
+        <button routerLink="edit/{{quiz.id}}" class="btn btn-success"><i class="fas fa-edit"></i></button>
+
       </td>
       <td>
-<!--        <button routerLink="detail/{{quiz.id}}" class="btn btn-info">DETAIL</button>-->
-        <button (click)="show(quiz.id)" data-toggle="modal" data-target="#exampleModal" class="btn btn-info"><i class="fas fa-info-circle"></i></button>
+        <!--        <button routerLink="detail/{{quiz.id}}" class="btn btn-info">DETAIL</button>-->
+        <button (click)="show(quiz.id)" data-toggle="modal" data-target="#exampleModal" class="btn btn-info"><i
+          class="fas fa-info-circle"></i></button>
 
       </td>
     </tr>
@@ -37,7 +36,7 @@
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Chi tiết quiz</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times</span>
+          <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
@@ -50,10 +49,10 @@
           </thead>
           <tbody>
           <tr>
-            <td style="font-weight: bold">Câu hỏi </td>
-            <td class="hahaha" *ngFor="let quest of quiz?.questions">{{quest.question_content}}</td>
-
-            <td></td>
+            <td style="font-weight: bold">Câu hỏi
+            </td>
+            <td>
+              <p *ngFor="let quest of quiz?.questions">{{quest.question_content}}</p></td>
           </tr>
 
           </tbody>

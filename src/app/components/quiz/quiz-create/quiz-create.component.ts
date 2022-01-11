@@ -16,7 +16,7 @@ export class QuizCreateComponent implements OnInit {
   formAddQuiz: FormGroup = new FormGroup({
     name: new FormControl(),
     duration: new FormControl(),
-    published: new FormControl(),
+    // published: new FormControl(),
     questions: new FormArray([]),
 
   })
@@ -36,7 +36,7 @@ export class QuizCreateComponent implements OnInit {
     this.quizService.addQuiz(quiz).subscribe(() => {
       this.formAddQuiz.reset();
       alert('Tạo thành công');
-      this.route.navigate(["quizzes/list"])
+      this.route.navigate(["admin/quizzes/list"])
     }, error => {
       console.log(error)
     })
