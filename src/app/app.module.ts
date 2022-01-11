@@ -47,7 +47,8 @@ import { UserListComponent } from './components/user/user-list/user-list.compone
     QuizComponent,
     TopicComponent,
     ResultComponent,
-    NavbarHomeComponent
+    NavbarHomeComponent,
+    UserListComponent
 
   ],
 
