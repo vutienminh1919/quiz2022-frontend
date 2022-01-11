@@ -1,4 +1,9 @@
 <h1>Tạo danh mục mới</h1>
+<br>
+<a routerLink="/admin/categories/list">
+  <button class="btn btn-outline-secondary">Trở về</button>
+</a>
+<br>
 <form [formGroup]="categoryForm" (ngSubmit)="submit()">
   <table class="table table-bordered">
     <tr>
@@ -13,7 +18,10 @@
       <td></td>
       <td>
         <button class="btn btn-outline-secondary">Tạo mới</button>
+
       </td>
     </tr>
   </table>
+
 </form>
+

@@ -1,16 +1,20 @@
-<h1>Cập nhật thông tin danh mục sản phẩm</h1>
+<h1>Cập nhật thông tin danh mục câu hỏi</h1>
+<br>
+<a routerLink="/admin/categories/list">
+  <button class="btn btn-outline-secondary">Trở về</button>
+</a>
 <div *ngIf="currentCategory.id" class="edit-form">
-  <h4>Category</h4>
+  <br>
   <form>
     <div class="form-group">
-      <label>Category Name</label>
+      <label>Tên danh mục</label>
       <input
         type="text"
         class="form-control"
         [(ngModel)]="currentCategory.category_name"
         name="category_name"
       />
-      <label>Category Description</label>
+      <label>Mô tả</label>
       <input
         type="text"
         class="form-control"
@@ -24,9 +28,9 @@
 
   <button
     type="submit"
-    class="badge badge-success mb-2"
+    class="btn btn-outline-secondary"
     (click)="updateCategory()"
   >
-    Update
+    Cập nhật
   </button>
 </div>
