@@ -24,7 +24,7 @@ export class CategoryCreateComponent implements OnInit {
     this.categoryService.saveCategory(category).subscribe(()=>{
       this.categoryForm.reset();
       alert('Tạo thành công');
-      this.route.navigate(["categories/list"])
+      this.route.navigate(["admin/categories/list"])
 
     }, error => {
       console.log(error)

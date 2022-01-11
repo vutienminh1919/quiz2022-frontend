@@ -1,5 +1,8 @@
 <h1>Danh sách danh mục câu hỏi</h1>
-<a routerLink="/categories/create">Tạo mới danh mục</a>
+<a routerLink="/admin/categories/create">
+  <button class="btn btn-outline-dark">Thêm mới</button>
+</a>
+
 <table class="table">
   <thead class="table-dark">
   <tr>
@@ -14,9 +17,12 @@
     <td>{{i + 1}}</td>
     <td>{{category.category_name}}</td>
     <td>{{category.category_description}}</td>
-    <td><a [routerLink]="['/categories/update',category.id]">Edit</a></td>
     <td>
-      <button (click)="delete(i)">Delete</button>
+      <a class="btn btn-success" [routerLink]="['/admin/categories/update',category.id]"><i class="fas fa-edit"></i></a>
+
+    </td>
+    <td>
+      <button (click)="delete(i)" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
     </td>
   </tr>
 </table>
