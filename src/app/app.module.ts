@@ -34,40 +34,39 @@ import { UserListComponent } from './components/user/user-list/user-list.compone
 
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        RegisterComponent,
-        LoginComponent,
-        MasterComponent,
-        HomeComponent,
-        FooterComponent,
-        NavbarComponent,
-        HeaderComponent,
-        AdminComponent,
-
-
-        QuizComponent,
-        TopicComponent,
-        ResultComponent,
-        NavbarHomeComponent,
-        LayoutComponent,
-        UserListComponent,
+  declarations: [
+    AppComponent,
+    RegisterComponent,
+    LoginComponent,
+    MasterComponent,
+    HomeComponent,
+    FooterComponent,
+    NavbarComponent,
+    HeaderComponent,
+    AdminComponent,
+    QuizComponent,
+    TopicComponent,
+    ResultComponent,
+    NavbarHomeComponent
 
     ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        CategoryModule,
-        AnswerModule,
-        QuestionModule
-    ],
-    providers: [],
-    exports: [
-        NavbarComponent
-    ],
-    bootstrap: [AppComponent]
+   
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    CategoryModule,
+    AnswerModule,
+    QuestionModule
+  ],
+  providers: [],
+  exports: [
+    NavbarComponent
+  ],
+  bootstrap: [AppComponent]
+
 })
 export class AppModule {
 }
