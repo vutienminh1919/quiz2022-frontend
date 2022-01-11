@@ -37,21 +37,22 @@
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Chi tiết quiz</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+          <span aria-hidden="true">&times</span>
         </button>
       </div>
       <div class="modal-body">
         <table class="table">
           <thead>
           <tr>
-            <th>Tên quiz</th>
-            <th>Câu hỏi</th>
+            <td style="font-weight: bold">Tên quiz</td>
+            <td>{{quiz?.name}}</td>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td>{{quiz?.name}}</td>
-            <td *ngFor="let quest of quiz?.questions">{{quest.question_content}}</td>
+            <td style="font-weight: bold">Câu hỏi </td>
+            <td class="hahaha" *ngFor="let quest of quiz?.questions">{{quest.question_content}}</td>
+
             <td></td>
           </tr>
 
