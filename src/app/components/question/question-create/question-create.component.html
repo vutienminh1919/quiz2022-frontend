@@ -18,18 +18,28 @@
     <div class="form-group">
       <label>Danh mục</label>
       <div class="input-group mb-3">
-        <select class="custom-select" formControlName="category">
+        <select class="custom-select" formControlName="category_id">
           <option *ngFor="let category of categories" value="{{category.id}}">{{category.category_name}}</option>
         </select>
       </div>
     </div>
-    <form [formGroup]="formAddAnswer" (ngSubmit)="submitAnswer()">
-      <input type="text" formControlName="answer_content">
-      <input type="text" formControlName="correct">
-      <button type="submit">add</button>
-    </form>
-
-
+    <div>
+      <form [formGroup]="formAddAnswer" (ngSubmit)="submitAnswer()">
+        <div class="form-group">
+          <label>Thêm câu trả lời</label>
+          <input class="form-control" type="text" formControlName="answer_content"><br>
+          <label>Đúng/Sai</label>
+          <div class="input-group mb-3">
+            <select class="custom-select"  formControlName="correct">
+              <option value="1">Đúng</option>
+              <option value="0">Sai</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" type="submit">Thêm</button>
+        </div>
+      </form>
+    </div>
+<hr>
     <button type="submit" class="btn btn-primary">Submit</button>
 
     <button class="btn btn-danger" routerLink="../list">Hủy</button>

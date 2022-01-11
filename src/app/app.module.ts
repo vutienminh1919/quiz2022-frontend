@@ -27,6 +27,7 @@ import { TopicComponent } from './components/frontend/layout/home/topic/topic.co
 import { ResultComponent } from './components/frontend/layout/home/result/result.component';
 import { NavbarHomeComponent } from './components/frontend/layout/home/navbar-home/navbar-home.component';
 import { LayoutComponent } from './components/main/layout/layout.component';
+import { UserListComponent } from './components/user/user-list/user-list.component';
 
 
 
@@ -50,6 +51,7 @@ import { LayoutComponent } from './components/main/layout/layout.component';
         ResultComponent,
         NavbarHomeComponent,
         LayoutComponent,
+        UserListComponent,
 
     ],
     imports: [
