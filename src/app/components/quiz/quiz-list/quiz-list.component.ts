@@ -19,7 +19,7 @@ export class QuizListComponent implements OnInit {
   getAll(){
     this.quizService.getAll().subscribe(quizzes => {
       this.quizzes = quizzes;
-      console.log(this.quizzes);
+      // console.log(this.quizzes);
     })
   }
   show(id: any) {

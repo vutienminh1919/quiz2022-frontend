@@ -19,9 +19,12 @@
 <!--    </div>-->
     <label>Chọn câu hỏi</label>
     <div *ngFor="let q of questions" class="form-group">
-      <input formControlName="questions" type="checkbox" [value]="q.id" (change)="onCheckSubmit($event)"><label>{{q.question_content}}</label>
+
+      <input type="checkbox" (change)="onCheckSubmit($event, q.id)">
+      <label>{{q.question_content}}</label>
     </div>
     <button class="btn btn-primary">Submit</button>
+    {{submitQuestion|json}}
 
   </form>
 </div>
