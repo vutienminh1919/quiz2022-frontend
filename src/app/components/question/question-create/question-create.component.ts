@@ -58,7 +58,7 @@ export class QuestionCreateComponent implements OnInit {
     })
     // this.formAddQuestion.answers = this.answersResult;
     // console.log('ket qua --> ', this.formAddQuestion.answers)
-    // alert('Tạo thành công ')
+    alert('Tạo thành công ')
     this.formAddQuestion?.reset();
 
     // this.route.navigate(["questions/list"]);
