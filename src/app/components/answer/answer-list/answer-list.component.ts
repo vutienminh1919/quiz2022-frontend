@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AnswerService} from "../../../service/answer/answer.service";
+import {CategoryService} from "../../../service/category.service";
+import {QuestionService} from "../../../service/question/question.service";
 
 @Component({
   selector: 'app-answer-list',
@@ -7,13 +9,19 @@ import {AnswerService} from "../../../service/answer/answer.service";
   styleUrls: ['./answer-list.component.css']
 })
 export class AnswerListComponent implements OnInit {
-answers: any[] = [];
-  constructor(private answerService: AnswerService) { }
+  answers: any[] = [];
+  questions: any[] = [];
+
+  constructor(private answerService: AnswerService,
+              private questionService: QuestionService) {
+  }
 
   ngOnInit(): void {
     this.getAll();
+    // this.getQuestion();
   }
-  getAll(){
+
+  getAll() {
     this.answerService.getAll().subscribe(answers => {
       this.answers = answers;
       console.log(answers)
@@ -30,5 +38,12 @@ answers: any[] = [];
       )
     })
 
+  }
+
+  getQuestion() {
+    this.questionService.getAll().subscribe(res => {
+      console.log(res);
+      this.questions = res;
+    })
   }
 }

@@ -8,7 +8,8 @@ import {AdminComponent} from "./components/frontend/layout/admin/admin.component
 import {QuizComponent} from "./components/frontend/layout/home/quiz/quiz.component";
 import {ResultComponent} from "./components/frontend/layout/home/result/result.component";
 import {TopicComponent} from "./components/frontend/layout/home/topic/topic.component";
-
+import {LayoutComponent} from "./components/main/layout/layout.component";
+import {QuestionListComponent} from "./components/question/question-list/question-list.component";
 
 
 const routes: Routes = [
@@ -16,10 +17,10 @@ const routes: Routes = [
     path: '',
     component: MasterComponent
   },
-  {
-    path: 'admin',
-    component: AdminComponent
-  },
+  // {
+  //   path: 'admin',
+  //   component: AdminComponent
+  // },
   {
     path: 'result',
     component: ResultComponent
@@ -47,10 +48,6 @@ const routes: Routes = [
   },
 
   {
-    path: 'test',
-    loadChildren: () => import('../app/components/test/test.module').then(module => module.TestModule)
-  },
-  {
     path: 'answers',
     loadChildren: () => import('../app/components/answer/answer.module').then(module => module.AnswerModule)
   },
@@ -61,23 +58,57 @@ const routes: Routes = [
     loadChildren: () => import('../app/components/test/test.module').then(module => module.TestModule)
   },
 
+  // {
+  //   path: 'questions',
+  //   loadChildren: () => import('../app/components/question/question.module').then(module => module.QuestionModule)
+  // },
+  // {
+  //   path: 'answers',
+  //   loadChildren: () => import('../app/components/answer/answer.module').then(module => module.AnswerModule)
+  // },
+  // {
+  //   path: 'categories',
+  //   loadChildren: () => import('../app/components/category/category.module').then(module => module.CategoryModule)
+  // },
   {
-    path: 'questions',
-    loadChildren: () => import('../app/components/question/question.module').then(module => module.QuestionModule)
-  },
-  {
-    path: 'answers',
-    loadChildren: () => import('../app/components/answer/answer.module').then(module => module.AnswerModule)
-  },
-  {
-    path: 'categories',
-    loadChildren: () => import('../app/components/category/category.module').then(module => module.CategoryModule)
-  },
-  {
-    path: 'quizzes',
-    loadChildren: () => import('../app/components/quiz/quiz.module').then(module=> module.QuizModule)
+// <<<<<<< xanh
+//     path: 'questions',
+//     loadChildren: () => import('../app/components/question/question.module').then(module => module.QuestionModule)
+//   },
+//   {
+//     path: 'answers',
+//     loadChildren: () => import('../app/components/answer/answer.module').then(module => module.AnswerModule)
+//   },
+//   {
+//     path: 'categories',
+//     loadChildren: () => import('../app/components/category/category.module').then(module => module.CategoryModule)
+//   },
+//   {
+//     path: 'quizzes',
+//     loadChildren: () => import('../app/components/quiz/quiz.module').then(module=> module.QuizModule)
+//   }
+//   ];
+// =======
+    path: 'admin',
+    component: AdminComponent,
+    children: [
+      {
+        path: 'questions',
+        loadChildren: () => import('../app/components/question/question.module').then(module => module.QuestionModule)
+      },
+      {
+        path: 'answers',
+        loadChildren: () => import('../app/components/answer/answer.module').then(module => module.AnswerModule)
+      },
+      {
+        path: 'categories',
+        loadChildren: () => import('../app/components/category/category.module').then(module => module.CategoryModule)
+      },
+
+    ]
   }
-  ];
+];
+
 
 
 @NgModule({

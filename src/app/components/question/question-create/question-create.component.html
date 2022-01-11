@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Thêm câu hỏi </h1>
-  <form *ngIf="formAddQuestion" [formGroup]="formAddQuestion" (ngSubmit)="submit()" >
+  <form *ngIf="formAddQuestion" [formGroup]="formAddQuestion" (ngSubmit)="submit()">
     <div class="form-group">
       <label>Tên câu hỏi</label>
       <textarea type="text" class="form-control" formControlName="question_content"></textarea>
@@ -18,14 +18,21 @@
     <div class="form-group">
       <label>Danh mục</label>
       <div class="input-group mb-3">
-        <select  class="custom-select" formControlName="category">
+        <select class="custom-select" formControlName="category">
           <option *ngFor="let category of categories" value="{{category.id}}">{{category.category_name}}</option>
         </select>
       </div>
     </div>
+    <form [formGroup]="formAddAnswer" (ngSubmit)="submitAnswer()">
+      <input type="text" formControlName="answer_content">
+      <input type="text" formControlName="correct">
+      <button type="submit">add</button>
+    </form>
 
 
     <button type="submit" class="btn btn-primary">Submit</button>
 
+    <button class="btn btn-danger" routerLink="../list">Hủy</button>
   </form>
+
 </div>

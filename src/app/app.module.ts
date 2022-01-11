@@ -15,7 +15,7 @@ import {LoginComponent} from "./components/auth/login/login.component";
 import { MasterComponent } from './components/frontend/master/master.component';
 import { HomeComponent } from './components/frontend/layout/home/home.component';
 import { FooterComponent } from './components/frontend/layout/admin/core/footer/footer.component';
-import { NavbarComponent } from './components/frontend/layout/admin/core/navbar/navbar.component';
+import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './components/frontend/layout/admin/core/header/header.component';
 
 import {AnswerModule} from "./components/answer/answer.module";
@@ -26,6 +26,7 @@ import { QuizComponent } from './components/frontend/layout/home/quiz/quiz.compo
 import { TopicComponent } from './components/frontend/layout/home/topic/topic.component';
 import { ResultComponent } from './components/frontend/layout/home/result/result.component';
 import { NavbarHomeComponent } from './components/frontend/layout/home/navbar-home/navbar-home.component';
+import { LayoutComponent } from './components/main/layout/layout.component';
 
 
 
@@ -42,12 +43,11 @@ import { NavbarHomeComponent } from './components/frontend/layout/home/navbar-ho
     NavbarComponent,
     HeaderComponent,
     AdminComponent,
-
-
     QuizComponent,
     TopicComponent,
     ResultComponent,
     NavbarHomeComponent,
+
 
   ],
   imports: [
