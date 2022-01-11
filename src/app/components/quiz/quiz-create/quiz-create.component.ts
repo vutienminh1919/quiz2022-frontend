@@ -17,8 +17,8 @@ export class QuizCreateComponent implements OnInit {
     name: new FormControl(),
     duration: new FormControl(),
     // published: new FormControl(),
-    questions: new FormArray([]),
-
+    // questions: new FormArray([]),
+    questions: new FormControl()
   })
 
   constructor(private quizService: QuizService,
