@@ -50,8 +50,8 @@ import { UserListComponent } from './components/user/user-list/user-list.compone
     NavbarHomeComponent
 
     ],
-   
-  ],
+
+
   imports: [
     BrowserModule,
     AppRoutingModule,
