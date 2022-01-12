@@ -13,7 +13,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let answer of answers; index as i">
+  <tr *ngFor="let answer of answers| paginate: { itemsPerPage: 10, currentPage: p }; index as i">
     <td>{{i + 1}}</td>
     <td>{{answer.answer_content}}</td>
     <td>{{ (answer.question.question_content.length>80)? (answer.question.question_content | slice:0:80)+'..':(answer.question.question_content)}}</td>
@@ -26,3 +26,4 @@
   </tbody>
 
 </table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
