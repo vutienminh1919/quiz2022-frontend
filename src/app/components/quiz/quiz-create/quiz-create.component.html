@@ -3,6 +3,11 @@
     <div class="form-group">
       <label>Tên bài thi</label>
       <input type="text" class="form-control" formControlName="name">
+      <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+        <p  style="color: red; margin-bottom: 10px" *ngIf="name?.errors?.['required']">
+          Tên bài thi không được để trống
+        </p>
+      </div>
     </div>
     <div class="form-group">
       <label>Thời gian</label>
@@ -12,6 +17,11 @@
         <option value="3">45 phút</option>
         <option value="4">60 phút</option>
       </select>
+      <div *ngIf="duration?.invalid && (duration?.dirty || duration?.touched)">
+        <p  style="color: red; margin-bottom: 10px" *ngIf="duration?.errors?.['required']">
+          Thời gian làm không được để trống
+        </p>
+      </div>
     </div>
 <!--    <div class="form-group">-->
 <!--      <label>Published</label>-->
@@ -23,8 +33,8 @@
       <input type="checkbox" (change)="onCheckSubmit($event, q.id)">
       <label>{{q.question_content}}</label>
     </div>
-    <button class="btn btn-primary">Submit</button>
-    {{submitQuestion|json}}
+    <button [disabled]="formAddQuiz?.invalid" class="btn btn-primary">Submit</button>
+
 
   </form>
 </div>

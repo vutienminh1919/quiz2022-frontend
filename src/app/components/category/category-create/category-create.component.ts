@@ -30,5 +30,7 @@ export class CategoryCreateComponent implements OnInit {
       console.log(error)
     })
   }
+  get category_name(){return this.categoryForm.get('category_name')}
+  get category_description(){return this.categoryForm.get('category_description')}
 
 }
