@@ -11,29 +11,29 @@ export class QuestionService {
   constructor(private http: HttpClient) { }
 
   getAll() :Observable<any>{
-    return this.http.get<any>(environment.apiUrl + '/questions');
+    return this.http.get<any>(environment.apiUrl + '/questions', {headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}});
 
   }
 
   addQuestion(data:any) : Observable<any>{
 
-    return this.http.post<any>(environment.apiUrl + '/questions', data)
+    return this.http.post<any>(environment.apiUrl + '/questions', data, {headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}})
 
   }
 
   delete(id:number):Observable<any> {
     // return this.http.delete(environment.apiUrl + '/' +id);
-    return this.http.delete<any>(`${environment.apiUrl}/questions/${id}`);
+    return this.http.delete<any>(`${environment.apiUrl}/questions/${id}`, {headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}});
 
   }
   edit(id:number,data :any) :Observable<any> {
 
-    return this.http.put(`${environment.apiUrl}/questions/${id}`, data);
+    return this.http.put(`${environment.apiUrl}/questions/${id}`, data, {headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}});
 
   }
   findById(id:number):Observable<any> {
     // return this.http.get(environment.apiUrl + '/' +id);
-    return this.http.get(`${environment.apiUrl}/questions/${id}` );
+    return this.http.get(`${environment.apiUrl}/questions/${id}`, {headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}} );
 
     // return this.http.get(environment.apiUrl + '/questions');
   }

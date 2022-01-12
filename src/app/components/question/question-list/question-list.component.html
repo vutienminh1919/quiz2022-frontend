@@ -8,7 +8,7 @@
       <td>Câu hỏi</td>
       <td>Độ khó</td>
       <td>Danh mục</td>
-      <td colspan="3" style="text-align: center">Hành động</td>
+      <td colspan="2" style="text-align: center">Hành động</td>
     </tr>
     </thead>
     <tbody>
@@ -20,9 +20,6 @@
 
       <td>
         <button (click)="delete(i)" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-      </td>
-      <td>
-<!--        <button routerLink="/edit/{{question.id}}" class="btn btn-success"><i class="fas fa-edit"></i></button>-->
       </td>
       <td>
         <button (click)="show(question.id)" data-toggle="modal" data-target="#exampleModal" class="btn btn-info"><i
