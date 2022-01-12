@@ -1,0 +1,62 @@
+<div class="container">
+  <a routerLink="/admin/quizzes/create">
+    <button class="btn btn-outline-info">Tạo bài thi</button>
+
+  </a>
+  <table class="table">
+    <tr>
+      <th scope="col">Tên bài thi</th>
+      <th scope="col">Thời gian</th>
+      <!--      <th scope="col">Published</th>-->
+      <th>Xem</th>
+    </tr>
+    <tr *ngFor="let quiz of quizzes;index as i">
+      <td>{{ quiz.name}}</td>
+      <td>{{quiz.duration == 1 ? '15 phút' : quiz.duration == 2 ? '30 phút' : quiz.duration == 3 ? '45 phút' : quiz.duration == 4 ? '60 phút' : ''}}</td>
+
+      <!--      <td>-->
+      <!--        <button (click)="delete(i)" class="btn btn-danger">DELETE</button>-->
+      <!--      </td>-->
+
+      <td>
+        <!--        <button routerLink="detail/{{quiz.id}}" class="btn btn-info">DETAIL</button>-->
+        <button (click)="show(quiz.id)" data-toggle="modal" data-target="#exampleModal" class="btn btn-info"><i
+          class="fas fa-info-circle"></i></button>
+
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Chi tiết bài thi</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <thead>
+          <tr>
+            <td style="font-weight: bold">Tên quiz</td>
+            <td>{{quiz?.name}}</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td style="font-weight: bold">Câu hỏi
+            </td>
+            <td>
+              <p *ngFor="let quest of quiz?.questions">{{quest.question_content}}</p></td>
+          </tr>
+
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,13 +1,69 @@
+<h1>Danh sách câu hỏi</h1>
 <div class="container">
-  <a routerLink="create"><button class="btn btn-success">Add New</button></a>
-  <table class="table table-dark">
+  <button routerLink="../create" class="btn btn-outline-primary">Thêm mới</button>
+  <table class="table">
+    <thead>
     <tr>
-      <td></td>
-      <td></td>
+      <td>STT</td>
+      <td>Câu hỏi</td>
+      <td>Độ khó</td>
+      <td>Danh mục</td>
+      <td colspan="3" style="text-align: center">Hành động</td>
     </tr>
-    <tr *ngFor="let question of questions;let i = index">
-      <td><button (click)="delete(i)" class="btn btn-danger">DELETE</button></td>
-      <td><button routerLink ="edit/{{question.id}}" class="btn btn-info">EDIT</button></td>
+    </thead>
+    <tbody>
+    <tr *ngFor="let question of questions;index as i">
+      <td>{{i + 1}}</td>
+      <td>{{ (question.question_content.length > 80) ? (question.question_content | slice:0:80) + '..' : (question.question_content)}}</td>
+      <td>{{question.difficulty == 1 ? 'Dễ' : question.difficulty == 2 ? 'Vừa' : question.difficulty == 3 ? 'Khó' : '' }}</td>
+      <td>{{ question.category.category_name}}</td>
+
+      <td>
+        <button (click)="delete(i)" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+      </td>
+      <td>
+        <button routerLink="/edit/{{question.id}}" class="btn btn-success"><i class="fas fa-edit"></i></button>
+      </td>
+      <td>
+        <button (click)="show(question.id)" data-toggle="modal" data-target="#exampleModal" class="btn btn-info"><i
+          class="fas fa-info-circle"></i></button>
+      </td>
     </tr>
+    </tbody>
   </table>
 </div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Chi tiết câu hỏi</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>{{question?.question_content}}</th>
+          </tr>
+          </thead>
+          <tr>
+            <td><b>Câu trả lời</b></td>
+            <td><b>Đúng/Sai</b></td>
+          </tr>
+          <tbody>
+          <tr *ngFor="let ans of question?.answers">
+            <td >{{ans.answer_content}}</td>
+            <td >{{ans.correct == 1 ? 'Đúng' : ans.correct == 0 ? 'Sai' : ''}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,20 +1,28 @@
 <p>answer-list works!</p>
 
-<a routerLink="/answers/create">Tạo mới cau tra loi</a>
-<table>
+
+<table class="table">
+
+  <thead class="table-dark">
   <tr>
     <td>STT</td>
-    <td>Tên</td>
-    <td>Cau hoi</td>
-    <td colspan="2"></td>
+    <td>Nội dung câu trả lời</td>
+    <td>Câu hỏi</td>
+    <td>Đúng/Sai</td>
+    <td colspan="2">hành động</td>
   </tr>
+  </thead>
+  <tbody>
   <tr *ngFor="let answer of answers; index as i">
     <td>{{i + 1}}</td>
-    <td>{{answer.name}}</td>
-    <td>{{answer.question_id}}</td>
-    <td><a [routerLink]="['/answers/update',answer.id]">Edit</a></td>
+    <td>{{answer.answer_content}}</td>
+    <td>{{ (answer.question.question_content.length>80)? (answer.question.question_content | slice:0:80)+'..':(answer.question.question_content)}}</td>
+    <td>{{answer.correct}}</td>
+    <td><button class="btn btn-success" [routerLink]="['/answers/update',answer.id]">Edit</button></td>
     <td>
-      <button (click)="delete(i)">Delete</button>
+      <button class="btn btn-danger" (click)="delete(i)">Delete</button>
     </td>
   </tr>
+  </tbody>
+
 </table>

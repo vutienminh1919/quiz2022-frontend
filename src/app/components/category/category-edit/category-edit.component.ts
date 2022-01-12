@@ -13,7 +13,8 @@ export class CategoryEditComponent implements OnInit {
 
   @Input() viewMode = false;
   @Input() currentCategory : Category = {
-    name: ''
+    category_name: '',
+    category_description: ''
   };
   message = '';
   categoryForm: FormGroup = new FormGroup({});
@@ -49,7 +50,7 @@ export class CategoryEditComponent implements OnInit {
         next: (res) => {
           console.log(res);
           this.message = res.message ? res.message :alert( 'Sửa danh mục câu hỏi thành công!');
-          this.router.navigate(['categories/list'])
+          this.router.navigate(['admin/categories/list'])
         },
         error: (e) => console.error(e)
       });

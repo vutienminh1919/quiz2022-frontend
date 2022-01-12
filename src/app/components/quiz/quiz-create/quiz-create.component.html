@@ -1,0 +1,30 @@
+<div class="container">
+  <form *ngIf="formAddQuiz" [formGroup] = "formAddQuiz" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label>Tên bài thi</label>
+      <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="form-group">
+      <label>Thời gian</label>
+      <select class="form-control" formControlName="duration">
+        <option value="1">15 phút</option>
+        <option value="2">30 phút</option>
+        <option value="3">45 phút</option>
+        <option value="4">60 phút</option>
+      </select>
+    </div>
+<!--    <div class="form-group">-->
+<!--      <label>Published</label>-->
+<!--      <input type="text" class="form-control" formControlName="published">-->
+<!--    </div>-->
+    <label>Chọn câu hỏi</label>
+    <div *ngFor="let q of questions" class="form-group">
+
+      <input type="checkbox" (change)="onCheckSubmit($event, q.id)">
+      <label>{{q.question_content}}</label>
+    </div>
+    <button class="btn btn-primary">Submit</button>
+    {{submitQuestion|json}}
+
+  </form>
+</div>

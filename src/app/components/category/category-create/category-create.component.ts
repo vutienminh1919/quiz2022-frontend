@@ -10,7 +10,8 @@ import {Router} from "@angular/router";
 })
 export class CategoryCreateComponent implements OnInit {
   categoryForm: FormGroup= new FormGroup({
-    name: new FormControl(),
+    category_name: new FormControl(),
+    category_description: new FormControl(),
   });
 
   constructor(private categoryService: CategoryService,
@@ -23,7 +24,7 @@ export class CategoryCreateComponent implements OnInit {
     this.categoryService.saveCategory(category).subscribe(()=>{
       this.categoryForm.reset();
       alert('Tạo thành công');
-      this.route.navigate(["categories/list"])
+      this.route.navigate(["admin/categories/list"])
 
     }, error => {
       console.log(error)
