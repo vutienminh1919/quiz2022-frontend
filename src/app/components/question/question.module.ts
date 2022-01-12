@@ -7,6 +7,7 @@ import { QuestionCreateComponent } from './question-create/question-create.compo
 import { QuestionEditComponent } from './question-edit/question-edit.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { QuestionDetailComponent } from './question-detail/question-detail.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 
 
@@ -17,12 +18,13 @@ import { QuestionDetailComponent } from './question-detail/question-detail.compo
     QuestionEditComponent,
     QuestionDetailComponent
   ],
-  imports: [
-    CommonModule,
-    QuestionRoutingModule,
-    ReactiveFormsModule,
-    FormsModule,
+    imports: [
+        CommonModule,
+        QuestionRoutingModule,
+        ReactiveFormsModule,
+        FormsModule,
+        NgxPaginationModule,
 
-  ]
+    ]
 })
 export class QuestionModule { }

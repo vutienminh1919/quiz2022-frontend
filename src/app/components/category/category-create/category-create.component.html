@@ -1,18 +1,28 @@
 <h1>Tạo danh mục mới</h1>
 <form [formGroup]="categoryForm" (ngSubmit)="submit()">
-  <table class="table table-bordered">
+  <table class="table">
     <tr>
-      <td>Tên danh mục:</td>
+      <td>Tên danh  mục:</td>
       <td><input type="text" formControlName="category_name"></td>
+      <div *ngIf="category_name?.invalid && (category_name?.dirty || category_name?.touched)">
+        <p  style="color: red; margin-bottom: 10px" *ngIf="category_name?.errors?.['required']">
+          Danh mục không được để trống
+        </p>
+      </div>
     </tr>
     <tr>
       <td>Mô tả:</td>
       <td><textarea type="text" formControlName="category_description"></textarea></td>
+      <div *ngIf="category_description?.invalid && (category_description?.dirty || category_description?.touched)">
+        <p  style="color: red; margin-bottom: 10px" *ngIf="category_description?.errors?.['required']">
+          Chi tiết danh mục không được để trống
+        </p>
+      </div>
     </tr>
     <tr>
       <td></td>
       <td>
-        <button class="btn btn-outline-secondary">Tạo mới</button>
+        <button [disabled]="categoryForm?.invalid"  class="btn btn-outline-secondary">Tạo mới</button>
       </td>
     </tr>
   </table>

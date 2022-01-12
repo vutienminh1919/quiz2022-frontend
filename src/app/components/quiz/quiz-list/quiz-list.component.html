@@ -10,7 +10,7 @@
       <!--      <th scope="col">Published</th>-->
       <th>Xem</th>
     </tr>
-    <tr *ngFor="let quiz of quizzes;index as i">
+    <tr *ngFor="let quiz of quizzes| paginate: { itemsPerPage: 10, currentPage: p };index as i">
       <td>{{ quiz.name}}</td>
       <td>{{quiz.duration == 1 ? '15 phút' : quiz.duration == 2 ? '30 phút' : quiz.duration == 3 ? '45 phút' : quiz.duration == 4 ? '60 phút' : ''}}</td>
 
@@ -50,7 +50,8 @@
             <td style="font-weight: bold">Câu hỏi
             </td>
             <td>
-              <p *ngFor="let quest of quiz?.questions">{{quest.question_content}}</p></td>
+              <p *ngFor="let quest of quiz?.questions| paginate: { itemsPerPage: 10, currentPage: p }; index as i ">{{i+1}} | {{quest.question_content}}</p><hr></td>
+
           </tr>
 
           </tbody>
@@ -60,3 +61,4 @@
     </div>
   </div>
 </div>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

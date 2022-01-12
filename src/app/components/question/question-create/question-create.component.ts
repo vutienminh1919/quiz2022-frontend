@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {QuestionService} from "../../../service/question/question.service";
 import {Router} from "@angular/router";
 import {CategoryService} from "../../../service/category.service";
@@ -13,13 +13,22 @@ export class QuestionCreateComponent implements OnInit {
   ans: any[] = [];
   // b: any[] = []
   // c: any[] = []
-
+  formAddQuestion = new FormGroup({
+    question_content: new FormControl(''),
+    difficulty: new FormControl(''),
+    category_id: new FormControl(''),
+  });
+  formAddAnswer = new FormGroup({
+    answer_content: new FormControl,
+    correct: new FormControl
+  });
   answers: any[] = [];
   answersResult: any[] = [];
   question: any[] = [];
   categories: any[] = [];
-  formAddQuestion: FormGroup | any;
-  formAddAnswer: FormGroup | any;
+
+  // formAddAnswer: FormGroup | any;
+
 
   constructor(private fb: FormBuilder,
               private questionService: QuestionService,
@@ -30,14 +39,14 @@ export class QuestionCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.formAddQuestion = this.fb.group({
-      question_content: [''],
-      difficulty: [''],
-      category_id: [''],
+      question_content: ['', [Validators.required]],
+      difficulty: ['', Validators.required],
+      category_id: ['', Validators.required],
       // answers: [this.ans]
     })
     this.formAddAnswer = this.fb.group({
-      answer_content: [''],
-      correct: ['']
+      answer_content: ['',Validators.required],
+      correct: ['',Validators.required]
     })
 
     this.getCategory();
@@ -104,5 +113,10 @@ export class QuestionCreateComponent implements OnInit {
     this.formAddAnswer?.reset();
 >>>>>>> 033d71cab1b415a4399b8eb8a0458fd5d8df3660
   }
+  get question_content() { return this.formAddQuestion.get('question_content'); }
+  get difficulty(){return this.formAddQuestion.get('dificulty')}
+  get category_id(){return this.formAddQuestion.get('category_id')}
+  get answer_content(){return this.formAddAnswer.get('answer_content')}
+  get correct(){return this.formAddAnswer.get('correct')}
 
 }
