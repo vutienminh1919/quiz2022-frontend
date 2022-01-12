@@ -22,7 +22,7 @@ export class CategoryService {
   }
 
   getAll(): Observable<Category[]> {
-    return this.http.get<Category[]>(API_URL + '/categories');
+    return this.http.get<Category[]>(API_URL + '/categories', {headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}});
   }
 
   saveCategory(category: any): Observable<any> {
@@ -37,7 +37,7 @@ export class CategoryService {
     return this.http.put(`${API_URL}/categories/${id}`, category );
   }
 
-  deleteCategory(id: number): Observable<Category> {
-    return this.http.delete<Category>(`${API_URL}/categories/${id}`);
+  deleteCategory(id: number): Observable<any> {
+    return this.http.delete<any>(`${API_URL}/categories/${id}`);
   }
 }

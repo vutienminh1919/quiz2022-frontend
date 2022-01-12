@@ -12,7 +12,7 @@ export class QuizService {
   constructor(private http : HttpClient) { }
 
   getAll(): Observable<any>{
-    return this.http.get<any>(environment.apiUrl+ '/quizzes')
+    return this.http.get<any>(environment.apiUrl+ '/quizzes', {headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}})
   }
   addQuiz(data: any): Observable<any>{
     return this.http.post<any>(environment.apiUrl+ '/quizzes', data)
