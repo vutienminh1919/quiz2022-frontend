@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {QuestionService} from "../../../service/question/question.service";
 import {AnswerService} from "../../../service/answer/answer.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-question-list',
@@ -17,7 +18,8 @@ export class QuestionListComponent implements OnInit {
 p: number = 1;
   search: any;
   constructor(private questionService: QuestionService,
-              private answerService: AnswerService) {
+              private answerService: AnswerService,
+              private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -65,6 +67,7 @@ p: number = 1;
         )
       })
     }
+    this.toastr.success('Xoá thành công', 'Thông báo')
   }
   // createAnswer(){
   //

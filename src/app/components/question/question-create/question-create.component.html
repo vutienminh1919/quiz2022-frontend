@@ -40,7 +40,8 @@
     <div>
       <form [formGroup]="formAddAnswer" (ngSubmit)="submitAnswer()">
         <div class="form-group">
-          <label>Thêm câu trả lời</label>
+          <h1>Thêm câu trả lời</h1>
+          <label >Tên câu trả lời</label>
           <input class="form-control" type="text" formControlName="answer_content">
           <div *ngIf="answer_content?.invalid && (answer_content?.dirty || answer_content?.touched)">
             <p  style="color: red; margin-bottom: 10px" *ngIf="answer_content?.errors?.['required']">

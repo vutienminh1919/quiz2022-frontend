@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {QuestionService} from "../../../service/question/question.service";
 import {Router} from "@angular/router";
 import {CategoryService} from "../../../service/category.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-question-create',
@@ -10,6 +11,7 @@ import {CategoryService} from "../../../service/category.service";
   styleUrls: ['./question-create.component.css']
 })
 export class QuestionCreateComponent implements OnInit {
+
   ans: any[] = [];
   // b: any[] = []
   // c: any[] = []
@@ -33,7 +35,8 @@ export class QuestionCreateComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private questionService: QuestionService,
               private route: Router,
-              private categoryService: CategoryService) {
+              private categoryService: CategoryService,
+              private toastr: ToastrService) {
   }
 
 
@@ -67,10 +70,11 @@ export class QuestionCreateComponent implements OnInit {
     })
     // this.formAddQuestion.answers = this.answersResult;
     // console.log('ket qua --> ', this.formAddQuestion.answers)
-    alert('Tạo thành công ')
+    // alert('Tạo thành công ')
     this.formAddQuestion?.reset();
 
     this.route.navigate(["admin/questions/list"]);
+    this.toastr.success('Thêm câu hỏi thành công', 'Thông báo')
 
   }
 
@@ -98,8 +102,8 @@ export class QuestionCreateComponent implements OnInit {
     this.ans = Array.from(new Set(this.answersResult.map(JSON.stringify)), JSON.parse);
     // console.log(this.answersResult)
     console.log('ans ==',this.ans)
-
     this.formAddAnswer?.reset();
+    this.toastr.success('Thêm câu trả lời thành công', 'Thông báo')
   }
   get question_content() { return this.formAddQuestion.get('question_content'); }
   get difficulty(){return this.formAddQuestion.get('dificulty')}

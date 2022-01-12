@@ -4,6 +4,8 @@ import {QuizService} from "../../../service/quiz.service";
 import {Router} from "@angular/router";
 import {QuestionService} from "../../../service/question/question.service";
 
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-quiz-create',
   templateUrl: './quiz-create.component.html',
@@ -12,7 +14,7 @@ import {QuestionService} from "../../../service/question/question.service";
 export class QuizCreateComponent implements OnInit {
   submitQuestion: any[] = [];
   questions: any[] = [];
-
+  searchQuestion: any;
   formAddQuiz: FormGroup = new FormGroup({
     name: new FormControl('',[Validators.required]),
     duration: new FormControl('',[Validators.required]),
@@ -23,7 +25,8 @@ export class QuizCreateComponent implements OnInit {
 
   constructor(private quizService: QuizService,
               private questionService: QuestionService,
-              private route: Router) {
+              private route: Router,
+              private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -35,8 +38,9 @@ export class QuizCreateComponent implements OnInit {
     // console.log(quiz)
     this.quizService.addQuiz({...quiz, questions: this.submitQuestion}).subscribe(() => {
       this.formAddQuiz.reset();
-      alert('Tạo thành công');
+      // alert('Tạo thành công');
       this.route.navigate(["admin/quizzes/list"])
+      this.toastr.success('Thêm mới thành công', 'Thông báo ');
     }, error => {
       console.log(error)
     })
