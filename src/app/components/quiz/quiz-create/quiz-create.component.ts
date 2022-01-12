@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormArray, FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {QuizService} from "../../../service/quiz.service";
 import {Router} from "@angular/router";
 import {QuestionService} from "../../../service/question/question.service";
@@ -14,8 +14,8 @@ export class QuizCreateComponent implements OnInit {
   questions: any[] = [];
 
   formAddQuiz: FormGroup = new FormGroup({
-    name: new FormControl(),
-    duration: new FormControl(),
+    name: new FormControl('',[Validators.required]),
+    duration: new FormControl('',[Validators.required]),
     // published: new FormControl(),
     // questions: new FormArray([]),
 
@@ -63,6 +63,8 @@ export class QuizCreateComponent implements OnInit {
 
     }
   }
+  get name(){return this.formAddQuiz.get('name')}
+  get duration(){return this.formAddQuiz.get('duration')}
   //     let i: number = 0;
   //     // @ts-ignore
   //     // formArray.controls.forEach((ctrl: FormControl) => {

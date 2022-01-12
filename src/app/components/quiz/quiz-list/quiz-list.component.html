@@ -50,7 +50,8 @@
             <td style="font-weight: bold">Câu hỏi
             </td>
             <td>
-              <p *ngFor="let quest of quiz?.questions">{{quest.question_content}}</p></td>
+              <p *ngFor="let quest of quiz?.questions; index as i ">{{i+1}} | {{quest.question_content}}</p><hr></td>
+
           </tr>
 
           </tbody>

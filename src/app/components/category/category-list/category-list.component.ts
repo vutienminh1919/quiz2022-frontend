@@ -9,7 +9,7 @@ import {CategoryService} from "../../../service/category.service";
 })
 export class CategoryListComponent implements OnInit {
   categories: Category[]= [];
-
+  p: number = 1;
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
@@ -23,9 +23,10 @@ export class CategoryListComponent implements OnInit {
   }
 
   delete(i: any) {
-    let category = this.categories[i];
+    const category = this.categories[i];
     // @ts-ignore
     this.categoryService.deleteCategory(category.id).subscribe(res => {
+      console.log(res)
       this.categories = this.categories.filter(
         n => n.id !== category.id
       )
