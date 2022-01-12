@@ -7,7 +7,7 @@ import {QuizEditComponent} from "./quiz-edit/quiz-edit.component";
 
 const routes: Routes = [
   {
-    path: 'list',
+    path: '',
     component: QuizListComponent
   },
   {

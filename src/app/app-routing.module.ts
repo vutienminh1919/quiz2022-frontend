@@ -11,6 +11,7 @@ import {TopicComponent} from "./components/frontend/layout/home/topic/topic.comp
 import {LayoutComponent} from "./components/main/layout/layout.component";
 import {QuestionListComponent} from "./components/question/question-list/question-list.component";
 import {UserListComponent} from "./components/user/user-list/user-list.component";
+import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 
 
 const routes: Routes = [
@@ -83,7 +84,9 @@ const routes: Routes = [
         component: UserListComponent
       }
     ]
-  }
+  },
+  {path: '**', component: PageNotFoundComponent}
+
 ];
 
 

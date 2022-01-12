@@ -32,6 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatTableModule} from "@angular/material/table";
 import {NgxPaginationModule} from 'ngx-pagination';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -51,7 +52,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     TopicComponent,
     ResultComponent,
     NavbarHomeComponent,
-    UserListComponent
+    UserListComponent,
+    PageNotFoundComponent
 
   ],
 
