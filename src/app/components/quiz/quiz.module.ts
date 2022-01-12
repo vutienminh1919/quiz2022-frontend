@@ -8,6 +8,7 @@ import {QuizCreateComponent} from "./quiz-create/quiz-create.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {QuizEditComponent} from './quiz-edit/quiz-edit.component';
 import {NgxPaginationModule} from "ngx-pagination";
+import { QuizManagerComponent } from './quiz-manager/quiz-manager.component';
 import {Ng2SearchPipeModule} from "ng2-search-filter";
 
 
@@ -16,7 +17,8 @@ import {Ng2SearchPipeModule} from "ng2-search-filter";
     QuizListComponent,
     QuizCreateComponent,
     QuizDetailComponent,
-    QuizEditComponent
+    QuizEditComponent,
+    QuizManagerComponent
   ],
   imports: [
     CommonModule,

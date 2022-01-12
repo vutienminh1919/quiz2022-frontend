@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import {CategoryService} from "../../../service/category.service";
 import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {Category} from "../../../model/category";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-category-edit',
@@ -22,7 +23,8 @@ export class CategoryEditComponent implements OnInit {
 
   constructor(private categoryService: CategoryService,
               private activatedRoute: ActivatedRoute,
-              private router: Router) {}
+              private router: Router,
+              private toastr: ToastrService) {}
 
 
   ngOnInit(): void {
@@ -49,10 +51,12 @@ export class CategoryEditComponent implements OnInit {
       .subscribe({
         next: (res) => {
           console.log(res);
-          this.message = res.message ? res.message :alert( 'Sửa danh mục câu hỏi thành công!');
+          // this.message = res.message ? res.message :alert( 'Sửa danh mục câu hỏi thành công!');
           this.router.navigate(['admin/categories/list'])
+          this.toastr.success('Sửa thành công ', 'Thông báo ')
         },
         error: (e) => console.error(e)
       });
+
   }
 }

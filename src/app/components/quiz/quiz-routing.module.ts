@@ -4,6 +4,7 @@ import {QuizListComponent} from "./quiz-list/quiz-list.component";
 import {QuizCreateComponent} from "./quiz-create/quiz-create.component";
 import {QuizDetailComponent} from "./quiz-detail/quiz-detail.component";
 import {QuizEditComponent} from "./quiz-edit/quiz-edit.component";
+import {QuizManagerComponent} from "./quiz-manager/quiz-manager.component";
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'edit/:id',
     component: QuizEditComponent
+  },
+  {
+    path: ':id/manager',
+    component: QuizManagerComponent
   }
 ];
 

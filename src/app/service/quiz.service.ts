@@ -23,4 +23,14 @@ export class QuizService {
   updateQuiz(id: any, quiz: any): Observable<any> {
     return this.http.put(`${API_URL}/quizzes/${id}`, quiz, {headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}});
   }
+
+  getQuizNotOfQuiz(id: any) {
+    return this.http.get<any>(`${API_URL}/quizzes/${id}/question-not-quiz`, {headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}})
+  }
+
+  addQuestion(id: any, data: any) {
+    return this.http.post<any>(`${API_URL}/quizzes/${id}/add-questions`, data, {headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}})
+
+  }
+
 }
