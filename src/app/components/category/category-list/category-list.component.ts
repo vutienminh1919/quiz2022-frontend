@@ -9,7 +9,7 @@ import {CategoryService} from "../../../service/category.service";
 })
 export class CategoryListComponent implements OnInit {
   categories: Category[]= [];
-
+  p: number = 1;
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
