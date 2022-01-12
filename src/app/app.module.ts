@@ -65,8 +65,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     AnswerModule,
     QuestionModule,
     BrowserAnimationsModule,
-    MatPaginatorModule,
-    MatTableModule,
+    // MatPaginatorModule,
+    // MatTableModule,
     NgxPaginationModule
   ],
   providers: [],

@@ -12,15 +12,15 @@ export class QuizService {
   constructor(private http : HttpClient) { }
 
   getAll(): Observable<any>{
-    return this.http.get<any>(environment.apiUrl+ '/quizzes')
+    return this.http.get<any>(environment.apiUrl+ '/quizzes', {headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}})
   }
   addQuiz(data: any): Observable<any>{
-    return this.http.post<any>(environment.apiUrl+ '/quizzes', data)
+    return this.http.post<any>(environment.apiUrl+ '/quizzes', data, {headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}})
   }
   findById(id: number): Observable<any> {
-    return this.http.get<any>(`${API_URL}/quizzes/${id}`)
+    return this.http.get<any>(`${API_URL}/quizzes/${id}`, {headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}})
   }
   updateQuiz(id: any, quiz: any): Observable<any> {
-    return this.http.put(`${API_URL}/quizzes/${id}`, quiz );
+    return this.http.put(`${API_URL}/quizzes/${id}`, quiz, {headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}});
   }
 }
