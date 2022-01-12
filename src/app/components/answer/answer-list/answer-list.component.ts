@@ -11,6 +11,7 @@ import {QuestionService} from "../../../service/question/question.service";
 export class AnswerListComponent implements OnInit {
   answers: any[] = [];
   questions: any[] = [];
+  p: number  = 1;
 
   constructor(private answerService: AnswerService,
               private questionService: QuestionService) {
