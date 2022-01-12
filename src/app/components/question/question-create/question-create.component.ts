@@ -70,7 +70,7 @@ export class QuestionCreateComponent implements OnInit {
     alert('Tạo thành công ')
     this.formAddQuestion?.reset();
 
-    // this.route.navigate(["questions/list"]);
+    this.route.navigate(["admin/questions/list"]);
 
   }
 
