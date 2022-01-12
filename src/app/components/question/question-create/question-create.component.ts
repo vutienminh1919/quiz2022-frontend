@@ -31,6 +31,7 @@ export class QuestionCreateComponent implements OnInit {
   {
     let data = this.formAddQuestion?.value;
     this.questionService.addQuestion(data).subscribe(question =>{
+      console.log(1);
       this.question.unshift(data);
       this.route.navigate([""]);
     })

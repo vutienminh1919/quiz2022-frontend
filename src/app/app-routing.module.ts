@@ -30,15 +30,13 @@ const routes: Routes = [
     ]
   },
 
-  {
 
   {
     path: 'test',
     loadChildren: ()=> import('../app/components/test/test.module').then(module=>module.TestModule)
-  }
-];
-
-    path: 'question',
+  },
+  {
+    path: 'questions',
     loadChildren: () => import('../app/components/question/question.module').then(module => module.QuestionModule)
   },
   {
