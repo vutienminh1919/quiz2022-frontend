@@ -52,28 +52,6 @@ export class QuestionCreateComponent implements OnInit {
     this.getCategory();
   }
 
-
-  submit() {
-
-    let data = this.formAddQuestion?.value;
-    console.log("data ===> ", data)
-    // console.log('ans =' ,this.ans)
-    // let data = this.question.push(this.answers)
-    // console.log(data);
-    this.questionService.addQuestion({...data, answers:this.ans}).subscribe(() => {
-      // console.log('dau ham vao khong')
-      // question.unshift(data);
-      // console.log('question == ', question)
-    })
-    // this.formAddQuestion.answers = this.answersResult;
-    // console.log('ket qua --> ', this.formAddQuestion.answers)
-    alert('Tạo thành công ')
-    this.formAddQuestion?.reset();
-
-    // this.route.navigate(["questions/list"]);
-
-  }
-
   getCategory() {
     this.categoryService.getAll().subscribe(res => {
       // console.log(res);
@@ -81,38 +59,28 @@ export class QuestionCreateComponent implements OnInit {
     })
   }
 
-<<<<<<< HEAD
-  submit()
-  {
+  submit() {
     let data = this.formAddQuestion?.value;
-    this.questionService.addQuestion(data).subscribe(question =>{
+    this.questionService.addQuestion(data).subscribe(question => {
       console.log(1);
       this.question.unshift(data);
       this.route.navigate([""]);
     })
     this.formAddQuestion?.reset();
-=======
+  }
+
   submitAnswer() {
     let answer = this.formAddAnswer?.value;
-
-    // console.log('answer == ', answer)
-    // console.log(answer)
     this.answers.unshift(answer);
-
-
     for (let i = 0; i < this.answers.length; i++) {
-      // console.log('i = ', i)
-      // console.log('chuyen == ', Object.values(this.answers[i]))
       this.answersResult.push(Object.values(this.answers[i]));
     }
     // @ts-ignore
     this.ans = Array.from(new Set(this.answersResult.map(JSON.stringify)), JSON.parse);
-    // console.log(this.answersResult)
     console.log('ans ==',this.ans)
-
     this.formAddAnswer?.reset();
->>>>>>> 033d71cab1b415a4399b8eb8a0458fd5d8df3660
   }
+
   get question_content() { return this.formAddQuestion.get('question_content'); }
   get difficulty(){return this.formAddQuestion.get('dificulty')}
   get category_id(){return this.formAddQuestion.get('category_id')}

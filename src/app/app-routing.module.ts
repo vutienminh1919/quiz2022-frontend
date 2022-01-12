@@ -18,10 +18,6 @@ const routes: Routes = [
     path: '',
     component: MasterComponent
   },
-  // {
-  //   path: 'admin',
-  //   component: AdminComponent
-  // },
   {
     path: 'result',
     component: ResultComponent
@@ -33,9 +29,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    // children: {
-    //
-    // }
+
   },
   {
     path: 'auth',
@@ -51,7 +45,6 @@ const routes: Routes = [
     ]
   },
 
-
   {
     path: 'test',
     loadChildren: ()=> import('../app/components/test/test.module').then(module=>module.TestModule)
@@ -63,7 +56,7 @@ const routes: Routes = [
   {
     path: 'answers',
     loadChildren: () => import('../app/components/answer/answer.module').then(module => module.AnswerModule)
-  }];
+  },
   {
     path: 'answers',
     loadChildren: () => import('../app/components/answer/answer.module').then(module => module.AnswerModule)
@@ -75,37 +68,8 @@ const routes: Routes = [
     loadChildren: () => import('../app/components/test/test.module').then(module => module.TestModule)
   },
 
-  // {
-  //   path: 'questions',
-  //   loadChildren: () => import('../app/components/question/question.module').then(module => module.QuestionModule)
-  // },
-  // {
-  //   path: 'answers',
-  //   loadChildren: () => import('../app/components/answer/answer.module').then(module => module.AnswerModule)
-  // },
-  // {
-  //   path: 'categories',
-  //   loadChildren: () => import('../app/components/category/category.module').then(module => module.CategoryModule)
-  // },
   {
-// <<<<<<< xanh
-//     path: 'questions',
-//     loadChildren: () => import('../app/components/question/question.module').then(module => module.QuestionModule)
-//   },
-//   {
-//     path: 'answers',
-//     loadChildren: () => import('../app/components/answer/answer.module').then(module => module.AnswerModule)
-//   },
-//   {
-//     path: 'categories',
-//     loadChildren: () => import('../app/components/category/category.module').then(module => module.CategoryModule)
-//   },
-//   {
-//     path: 'quizzes',
-//     loadChildren: () => import('../app/components/quiz/quiz.module').then(module=> module.QuizModule)
-//   }
-//   ];
-// =======
+
     path: 'admin',
     component: AdminComponent,
     children: [
