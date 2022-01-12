@@ -10,7 +10,7 @@ export class QuizListComponent implements OnInit {
 
   quizzes: any[] = [];
   quiz: any;
-
+p: number = 1;
   constructor(private quizService : QuizService) { }
 
   ngOnInit(): void {
