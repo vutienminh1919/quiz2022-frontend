@@ -33,6 +33,8 @@ import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatTableModule} from "@angular/material/table";
 import {NgxPaginationModule} from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 
 
 
@@ -51,7 +53,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     TopicComponent,
     ResultComponent,
     NavbarHomeComponent,
-    UserListComponent
+    UserListComponent,
+    PageNotFoundComponent
 
   ],
 

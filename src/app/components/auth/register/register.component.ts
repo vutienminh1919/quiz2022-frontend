@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 import {Router} from "@angular/router";
 import {AuthService} from "../../../service/auth.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-register',
@@ -14,7 +15,8 @@ registerForm: FormGroup|any;
 users: any[]= [];
   constructor(private registerService: AuthService,
               private fb: FormBuilder,
-              private router: Router) { }
+              private router: Router,
+              private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -36,8 +38,9 @@ users: any[]= [];
       this.users.unshift(user)
     })
     this.registerForm?.reset();
-    alert('tao thanh cong');
+    // alert('tao thanh cong');
     this.router.navigate(['/auth/login']);
+    this.toastr.success('Tạo tài khoản thành công ',':)')
   }
 
 }
