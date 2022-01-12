@@ -8,6 +8,7 @@ import { QuestionEditComponent } from './question-edit/question-edit.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { QuestionDetailComponent } from './question-detail/question-detail.component';
 import {NgxPaginationModule} from "ngx-pagination";
+import {Ng2SearchPipeModule} from "ng2-search-filter";
 
 
 
@@ -24,6 +25,7 @@ import {NgxPaginationModule} from "ngx-pagination";
         ReactiveFormsModule,
         FormsModule,
         NgxPaginationModule,
+        Ng2SearchPipeModule,
 
     ]
 })

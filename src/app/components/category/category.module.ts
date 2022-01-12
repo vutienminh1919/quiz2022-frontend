@@ -7,6 +7,7 @@ import { CategoryListComponent } from './category-list/category-list.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CategoryCreateComponent} from "./category-create/category-create.component";
 import {NgxPaginationModule} from "ngx-pagination";
+import {Ng2SearchPipeModule} from "ng2-search-filter";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {NgxPaginationModule} from "ngx-pagination";
         CategoryRoutingModule,
         ReactiveFormsModule,
         FormsModule,
-        NgxPaginationModule
+        NgxPaginationModule,
+        Ng2SearchPipeModule
     ]
 })
 export class CategoryModule { }

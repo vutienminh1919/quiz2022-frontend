@@ -28,7 +28,8 @@
 <!--      <input type="text" class="form-control" formControlName="published">-->
 <!--    </div>-->
     <label>Chọn câu hỏi</label>
-    <div *ngFor="let q of questions" class="form-group">
+    <input type="text" [(ngModel)]="searchQuestion" placeholder="Search">
+    <div *ngFor="let q of questions | filter: searchQuestion" class="form-group">
 
       <input type="checkbox" (change)="onCheckSubmit($event, q.id)">
       <label>{{q.question_content}}</label>

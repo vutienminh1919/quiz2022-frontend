@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../../service/auth.service";
 
 import {Router} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
 
 
 @Component({
@@ -22,7 +23,8 @@ export class LoginComponent implements OnInit {
 
   constructor(private loginService: AuthService,
               public fb: FormBuilder,
-              public router: Router,) {
+              public router: Router,
+              private toastr: ToastrService) {
 
   }
 
@@ -48,8 +50,10 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/auth/login'])
       } else if (data.user == 'admin@gmail.com') {
         this.router.navigate(['/admin'])
+        this.toastr.success(`Xin chào admin: ${data.name}`, 'Đăng nhập thành công')
       } else {
         this.router.navigate(['/home'])
+        this.toastr.success(`Xin chào ${data.name}`, 'Đăng nhập thành công')
       }
 
 
