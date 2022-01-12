@@ -28,7 +28,10 @@ import { ResultComponent } from './components/frontend/layout/home/result/result
 import { NavbarHomeComponent } from './components/frontend/layout/home/navbar-home/navbar-home.component';
 import { LayoutComponent } from './components/main/layout/layout.component';
 import { UserListComponent } from './components/user/user-list/user-list.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatTableModule} from "@angular/material/table";
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -60,7 +63,11 @@ import { UserListComponent } from './components/user/user-list/user-list.compone
     HttpClientModule,
     CategoryModule,
     AnswerModule,
-    QuestionModule
+    QuestionModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule,
+    MatTableModule,
+    NgxPaginationModule
   ],
   providers: [],
   exports: [
