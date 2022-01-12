@@ -4,6 +4,10 @@
     <div class="form-group">
       <label>Tên câu hỏi</label>
       <textarea type="text" class="form-control" formControlName="question_content"></textarea>
+      <div *ngIf="question_content?.invalid && (question_content?.dirty || question_content?.touched)">
+        <p  style="color: red; margin-bottom: 10px" *ngIf="question_content?.errors?.['required']">
+          Câu hỏi không được để trống
+        </p>
     </div>
     <div class="form-group">
       <label>Độ khó</label>
@@ -14,6 +18,11 @@
           <option value="3">Khó</option>
         </select>
       </div>
+      <div *ngIf="difficulty?.invalid && (difficulty?.dirty || difficulty?.touched)">
+        <p  style="color: red; margin-bottom: 10px" *ngIf="difficulty?.errors?.['required']">
+          Độ khó không được để trống
+        </p>
+      </div>
     </div>
     <div class="form-group">
       <label>Danh mục</label>
@@ -22,6 +31,11 @@
           <option *ngFor="let category of categories" value="{{category.id}}">{{category.category_name}}</option>
         </select>
       </div>
+      <div *ngIf="category_id?.invalid && (category_id?.dirty || category_id?.touched)">
+        <p  style="color: red; margin-bottom: 10px" *ngIf="category_id?.errors?.['required']">
+          Danh mục không được để trống
+        </p>
+      </div>
     </div>
     <div>
       <form [formGroup]="formAddAnswer" (ngSubmit)="submitAnswer()">
@@ -29,20 +43,31 @@
           <label>Thêm câu trả lời</label>
           <input class="form-control" type="text" formControlName="answer_content"><br>
           <label>Đúng/Sai</label>
+          <div *ngIf="answer_content?.invalid && (answer_content?.dirty || answer_content?.touched)">
+            <p  style="color: red; margin-bottom: 10px" *ngIf="answer_content?.errors?.['required']">
+              Tên câu trả lời không được để trống
+            </p>
+          </div>
           <div class="input-group mb-3">
             <select class="custom-select"  formControlName="correct">
               <option value="1">Đúng</option>
               <option value="0">Sai</option>
             </select>
           </div>
-          <button class="btn btn-primary" type="submit">Thêm</button>
+          <div *ngIf="correct?.invalid && (correct?.dirty || correct?.touched)">
+            <p  style="color: red; margin-bottom: 10px" *ngIf="correct?.errors?.['required']">
+              Đáp án câu trả lời không được để trống
+            </p>
+          </div>
+          <button [disabled]="formAddAnswer?.invalid" class="btn btn-primary" type="submit">Thêm</button>
         </div>
       </form>
     </div>
 <hr>
-    <button type="submit" class="btn btn-primary">Thêm mới</button>
+    <button [disabled]="formAddQuestion?.invalid" type="submit" class="btn btn-primary">Thêm mới</button>
 
     <button class="btn btn-danger" routerLink="../list">Quay lại</button>
+    </div>
   </form>
 
 </div>

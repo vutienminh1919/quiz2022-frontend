@@ -26,6 +26,7 @@ export class CategoryListComponent implements OnInit {
     const category = this.categories[i];
     // @ts-ignore
     this.categoryService.deleteCategory(category.id).subscribe(res => {
+      console.log(res)
       this.categories = this.categories.filter(
         n => n.id !== category.id
       )
