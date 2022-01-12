@@ -1,31 +1,60 @@
-<div class="container">
-  <a routerLink="/admin/quizzes/create">
-    <button class="btn btn-outline-info">Tạo bài thi</button>
 
-  </a>
-  <table class="table">
-    <tr>
-      <th scope="col">Tên bài thi</th>
-      <th scope="col">Thời gian</th>
-      <!--      <th scope="col">Published</th>-->
-      <th>Xem</th>
-    </tr>
-    <tr *ngFor="let quiz of quizzes| paginate: { itemsPerPage: 10, currentPage: p };index as i">
-      <td>{{ quiz.name}}</td>
-      <td>{{quiz.duration == 1 ? '15 phút' : quiz.duration == 2 ? '30 phút' : quiz.duration == 3 ? '45 phút' : quiz.duration == 4 ? '60 phút' : ''}}</td>
+<h1>Quản lý bài thi </h1><br>
+<input placeholder="Search" style="width: 300px" class="form-control" type="text" [(ngModel)]="search"><br>
 
-      <!--      <td>-->
-      <!--        <button (click)="delete(i)" class="btn btn-danger">DELETE</button>-->
-      <!--      </td>-->
+<!--<div class="container">-->
+<!--  <a routerLink="/admin/quizzes/create">-->
+<!--    <button class="btn btn-outline-info">Tạo bài thi</button>-->
 
-      <td>
-        <!--        <button routerLink="detail/{{quiz.id}}" class="btn btn-info">DETAIL</button>-->
-        <button (click)="show(quiz.id)" data-toggle="modal" data-target="#exampleModal" class="btn btn-info"><i
-          class="fas fa-info-circle"></i></button>
+<!--  </a>-->
+<!--  <table class="table">-->
+<!--    <tr>-->
+<!--      <th scope="col">Tên bài thi</th>-->
+<!--      <th scope="col">Thời gian</th>-->
+<!--      &lt;!&ndash;      <th scope="col">Published</th>&ndash;&gt;-->
+<!--      <th>Xem</th>-->
+<!--    </tr>-->
+<!--    <tr *ngFor="let quiz of quizzes|filter:search | paginate: { itemsPerPage: 10, currentPage: p };index as i">-->
+<!--      <td>{{ quiz.name}}</td>-->
+<!--      <td>{{quiz.duration == 1 ? '15 phút' : quiz.duration == 2 ? '30 phút' : quiz.duration == 3 ? '45 phút' : quiz.duration == 4 ? '60 phút' : ''}}</td>-->
 
-      </td>
-    </tr>
-  </table>
+<div class="col-12">
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-12 col-md-8">
+          <h2>Danh sách bài thi</h2>
+        </div>
+        <div class="col-12 col-md-4">
+          <button class="btn btn-outline-success" routerLink="/admin/quizzes/create">Tạo bài thi</button>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <tr>
+          <th scope="col">Tên bài thi</th>
+          <th scope="col">Thời gian</th>
+          <th>Xem</th>
+          <th></th>
+        </tr>
+        <tr *ngFor="let quiz of quizzes| paginate: { itemsPerPage: 10, currentPage: p };index as i">
+          <td>{{ quiz.name}}</td>
+          <td>{{quiz.duration == 1 ? '15 phút' : quiz.duration == 2 ? '30 phút' : quiz.duration == 3 ? '45 phút' : quiz.duration == 4 ? '60 phút' : ''}}</td>
+          <td>
+            <!--        <button routerLink="detail/{{quiz.id}}" class="btn btn-info">DETAIL</button>-->
+            <button (click)="show(quiz.id)" data-toggle="modal" data-target="#exampleModal" class="btn btn-info"><i
+              class="fas fa-info-circle"></i></button>
+          </td>
+          <td>
+            <button class="btn btn-info">Quản lý câu hỏi</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+
 </div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -50,12 +79,13 @@
             <td style="font-weight: bold">Câu hỏi
             </td>
             <td>
-              <p *ngFor="let quest of quiz?.questions| paginate: { itemsPerPage: 10, currentPage: p }; index as i ">{{i+1}} | {{quest.question_content}}</p><hr></td>
-
+              <p
+                *ngFor="let quest of quiz?.questions| paginate: { itemsPerPage: 10, currentPage: p }; index as i ">{{i + 1}}
+                | {{quest.question_content}}</p>
+              <hr>
+            </td>
           </tr>
-
           </tbody>
-
         </table>
       </div>
     </div>

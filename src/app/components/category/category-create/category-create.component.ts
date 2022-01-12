@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {CategoryService} from "../../../service/category.service";
 import {Router} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-category-create',
@@ -15,7 +16,8 @@ export class CategoryCreateComponent implements OnInit {
   });
 
   constructor(private categoryService: CategoryService,
-              private route: Router) { }
+              private route: Router,
+              private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -23,8 +25,10 @@ export class CategoryCreateComponent implements OnInit {
     const category = this.categoryForm.value;
     this.categoryService.saveCategory(category).subscribe(()=>{
       this.categoryForm.reset();
-      alert('Tạo thành công');
+      // alert('Tạo thành công');
       this.route.navigate(["admin/categories/list"])
+      this.toastr.success('Thêm mới thành công', 'Thông báo ')
+
 
     }, error => {
       console.log(error)

@@ -9,8 +9,6 @@
 
 
       <input type="text" id="email" formControlName="email" placeholder="Email" autocomplete="off" required>
-      <!--      <div *ngIf="email?.invalid && (email?.dirty)"-->
-      <!--           class="alert alert-danger">-->
       <div *ngIf="email?.invalid && (email?.dirty || email?.touched)"><
       <p  style="color: red; margin-bottom: 10px" *ngIf="email?.errors?.['required']">
         Email không được để trống
@@ -26,22 +24,18 @@
         Mật khẩu không được để trống
       </p>
       </div>
-<!--      <p style="color: red" *ngIf="password?.errors?.['min']">-->
-<!--        Mật khẩu phải từ 8 ký tự trở lên-->
-<!--      </p><br>-->
-      <button  type="submit" value="" class="btn1">Dang nhap</button>
-
-      <input type="submit" value="Sign in" class="btn1">
+      <input type="submit" value="Đăng nhập" class="btn1">
       <div class="text-cent">
-        <br>
-        <br>
-        <br>
+        <br> <br> <br>
+        <br><br><br>
+
+
+
         <a routerLink="/auth/register">Đăng ký</a>
         <a href=" "> Quên mật khẩu</a>
       </div>
 
     </form>
-
   </div>
 </div>
 
