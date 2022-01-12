@@ -1,7 +1,14 @@
 <h1>Tạo danh mục mới</h1>
+<br>
+<a routerLink="/admin/categories/list">
+  <button class="btn btn-outline-secondary">Trở về</button>
+</a>
+<br>
 <form [formGroup]="categoryForm" (ngSubmit)="submit()">
   <table class="table">
+
     <tr>
+
       <td>Tên danh  mục:</td>
       <td><input type="text" formControlName="category_name"></td>
       <div *ngIf="category_name?.invalid && (category_name?.dirty || category_name?.touched)">
@@ -26,4 +33,6 @@
       </td>
     </tr>
   </table>
+
 </form>
+

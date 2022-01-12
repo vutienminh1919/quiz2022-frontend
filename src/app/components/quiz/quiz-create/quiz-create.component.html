@@ -33,6 +33,7 @@
       <input type="checkbox" (change)="onCheckSubmit($event, q.id)">
       <label>{{q.question_content}}</label>
     </div>
+<!--    {{submitQuestion|json}}-->
     <button [disabled]="formAddQuiz?.invalid" class="btn btn-primary">Submit</button>
 
 
