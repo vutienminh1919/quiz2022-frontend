@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../../service/user.service";
 
 @Component({
@@ -7,13 +7,17 @@ import {UserService} from "../../../service/user.service";
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-users: any[] = [];
+  users: any[] = [];
   p: number = 1;
-  constructor(private userService: UserService) { }
+  search: any;
+
+  constructor(private userService: UserService) {
+  }
 
   ngOnInit(): void {
     this.getAll();
   }
+
   getAll() {
     this.userService.getAll().subscribe(res => {
       this.users = res;

@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-
+import { ToastrModule } from 'ngx-toastr';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 
 import {CategoryModule} from "./components/category/category.module";
@@ -32,6 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatTableModule} from "@angular/material/table";
 import {NgxPaginationModule} from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
@@ -67,9 +68,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AnswerModule,
     QuestionModule,
     BrowserAnimationsModule,
-    // MatPaginatorModule,
-    // MatTableModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
+    FormsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   exports: [
