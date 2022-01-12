@@ -15,6 +15,7 @@ export class QuestionListComponent implements OnInit {
   question: any;
   diff: any[] = []
 p: number = 1;
+  search: any;
   constructor(private questionService: QuestionService,
               private answerService: AnswerService) {
   }

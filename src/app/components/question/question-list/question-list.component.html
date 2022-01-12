@@ -1,4 +1,6 @@
-<h1>Danh sách câu hỏi</h1>
+<h1>Danh sách câu hỏi</h1><br>
+<input placeholder="Search" style="width: 300px" class="form-control" type="text" [(ngModel)]="search"><br>
+
 <div class="container">
   <button routerLink="../create" class="btn btn-outline-primary">Thêm mới</button>
   <table class="table">
@@ -12,7 +14,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let question of questions| paginate: { itemsPerPage: 10, currentPage: p };index as i">
+    <tr *ngFor="let question of questions|filter:search| paginate: { itemsPerPage: 10, currentPage: p };index as i">
       <td>{{i + 1}}</td>
       <td>{{ (question.question_content.length > 80) ? (question.question_content | slice:0:80) + '..' : (question.question_content)}}</td>
       <td>{{question.difficulty == 1 ? 'Dễ' : question.difficulty == 2 ? 'Vừa' : question.difficulty == 3 ? 'Khó' : '' }}</td>
