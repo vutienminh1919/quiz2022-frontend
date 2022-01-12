@@ -7,6 +7,7 @@ import {AnswerCreateComponent} from "./answer-create/answer-create.component";
 
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AnswerEditComponent } from './answer-edit/answer-edit.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 
 @NgModule({
@@ -15,11 +16,12 @@ import { AnswerEditComponent } from './answer-edit/answer-edit.component';
     AnswerEditComponent,
     AnswerCreateComponent
   ],
-  imports: [
-    CommonModule,
-    AnswerRoutingModule,
-    ReactiveFormsModule,
-    FormsModule
-  ]
+    imports: [
+        CommonModule,
+        AnswerRoutingModule,
+        ReactiveFormsModule,
+        FormsModule,
+        NgxPaginationModule
+    ]
 })
 export class AnswerModule { }
