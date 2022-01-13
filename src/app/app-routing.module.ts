@@ -12,6 +12,7 @@ import {LayoutComponent} from "./components/main/layout/layout.component";
 import {QuestionListComponent} from "./components/question/question-list/question-list.component";
 import {UserListComponent} from "./components/user/user-list/user-list.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import {ChangePasswordComponent} from "./components/auth/change-password/change-password.component";
 
 
 const routes: Routes = [
@@ -44,6 +45,10 @@ const routes: Routes = [
       {
         path: 'login',
         component: LoginComponent
+      },
+      {
+        path: 'change-password',
+        component: ChangePasswordComponent
       }
     ]
   },
