@@ -12,9 +12,10 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./quiz-create.component.css']
 })
 export class QuizCreateComponent implements OnInit {
+  p: number = 1;
   submitQuestion: any[] = [];
   questions: any[] = [];
-  searchQuestion: any;
+  search: any;
   formAddQuiz: FormGroup = new FormGroup({
     name: new FormControl('',[Validators.required]),
     duration: new FormControl('',[Validators.required]),

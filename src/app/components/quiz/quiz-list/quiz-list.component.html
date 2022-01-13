@@ -1,4 +1,3 @@
-
 <h1>Quản lý bài thi </h1><br>
 <input placeholder="Search" style="width: 300px" class="form-control" type="text" [(ngModel)]="search"><br>
 
@@ -38,7 +37,7 @@
           <th>Xem</th>
           <th></th>
         </tr>
-        <tr *ngFor="let quiz of quizzes| paginate: { itemsPerPage: 10, currentPage: p };index as i">
+        <tr *ngFor="let quiz of quizzes | filter:search | paginate: { itemsPerPage: 10, currentPage: p };index as i">
           <td>{{ quiz.name}}</td>
           <td>{{quiz.duration == 1 ? '15 phút' : quiz.duration == 2 ? '30 phút' : quiz.duration == 3 ? '45 phút' : quiz.duration == 4 ? '60 phút' : ''}}</td>
           <td>
