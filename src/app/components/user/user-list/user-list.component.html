@@ -1,18 +1,22 @@
-<h1>Người dùng </h1>
+<h1>Người dùng </h1><br>
+<input placeholder="Search" style="width: 300px" class="form-control" type="text" [(ngModel)]="search"><br>
 <table class="table">
 
   <thead class="table-dark">
+
   <tr>
     <td>STT</td>
     <td>Tên</td>
     <td>Email</td>
+
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let user of users | paginate: { itemsPerPage: 10, currentPage: p }; index as i">
+  <tr *ngFor="let user of users|filter:search | paginate: { itemsPerPage: 10, currentPage: p }; index as i">
     <td>{{i + 1}}</td>
     <td>{{user.name}}</td>
     <td>{{user.email}}</td>
+
   </tr>
   </tbody>
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Category} from "../../../model/category";
 import {CategoryService} from "../../../service/category.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-category-list',
@@ -10,7 +11,10 @@ import {CategoryService} from "../../../service/category.service";
 export class CategoryListComponent implements OnInit {
   categories: Category[]= [];
   p: number = 1;
-  constructor(private categoryService: CategoryService) { }
+  search: any;
+
+  constructor(private categoryService: CategoryService,
+              private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getAll();
@@ -31,6 +35,7 @@ export class CategoryListComponent implements OnInit {
         n => n.id !== category.id
       )
     })
+    this.toastr.success('Xóa thành công ', 'Thông báo')
 
   }
 }
