@@ -30,9 +30,16 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    // children: {
-    //
-    // }
+    children: [
+      {
+        path: 'topic',
+        component: TopicComponent,
+      },
+      {
+        path: 'quiz',
+        component: QuizComponent
+      }
+    ]
   },
   {
     path: 'auth',
@@ -58,6 +65,7 @@ const routes: Routes = [
     path: 'tests',
     loadChildren: () => import('../app/components/test/test.module').then(module => module.TestModule)
   },
+
 
   {
     path: 'admin',

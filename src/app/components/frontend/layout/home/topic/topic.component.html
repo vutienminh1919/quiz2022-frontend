@@ -1,1 +1,8 @@
-<p>topic works!</p>
+<div class="card" style="width: 18rem;" *ngFor="let quiz of listQuiz">
+  <router-outlet></router-outlet>
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{quiz.name}}</h5>
+    <a routerLink="../quiz" class="btn btn-primary" >Go somewhere</a>
+  </div>
+</div>
