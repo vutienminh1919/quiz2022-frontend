@@ -19,16 +19,19 @@
             <tr>
               <th>STT</th>
               <th>Câu hỏi</th>
+              <th></th>
             </tr>
             </thead>
             <tr *ngFor="let question of quiz?.questions; let i = index">
-              <td><input type="checkbox">
+              <td>
+<!--                <input type="checkbox">-->
               {{ i + 1}}</td>
               <td>{{ question.question_content }}</td>
+<!--              <td>-->
+<!--                <button class="btn btn-danger" (click)="deleteQuestion(question.id)"  >Delete</button></td>-->
             </tr>
             <tr>
-              <td>
-                <button class="btn btn-danger">Delete</button></td>
+
               <td></td>
             </tr>
           </table>

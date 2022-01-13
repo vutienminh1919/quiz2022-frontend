@@ -47,5 +47,15 @@ export class QuizManagerComponent implements OnInit {
     })
   }
 
+  deleteQuestion(questionId: any) {
+    const ques = this.listQuiz.questions[questionId];
+    this.quizService.deleteQuestion(ques.id).subscribe(res => {
+      console.log(res)
+      this.listQuiz.questions = this.listQuiz.questions.filter(
+          (n: { question_id: any; }) => n.question_id !== ques.id
+      )
+    })
+  }
+
 
 }

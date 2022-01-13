@@ -32,5 +32,8 @@ export class QuizService {
     return this.http.post<any>(`${API_URL}/quizzes/${id}/add-questions`, data, {headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}})
 
   }
+  deleteQuestion(id: any){
+    return this.http.delete<any>(`${API_URL}/quizzes/${id}/delete-questions`, {headers:{'Authorization': `Bearer ${localStorage.getItem('token')}`}})
+  }
 
 }

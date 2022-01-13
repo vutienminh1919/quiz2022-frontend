@@ -39,7 +39,7 @@ export class QuizCreateComponent implements OnInit {
     this.quizService.addQuiz({...quiz, questions: this.submitQuestion}).subscribe(() => {
       this.formAddQuiz.reset();
       // alert('Tạo thành công');
-      this.route.navigate(["admin/quizzes/list"])
+      this.route.navigate(["admin/quizzes"])
       this.toastr.success('Thêm mới thành công', 'Thông báo ');
     }, error => {
       console.log(error)
