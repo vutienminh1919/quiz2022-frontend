@@ -21,6 +21,7 @@ export class AuthService {
     //@ts-ignore
     return this.http.post<any>(API_URL + '/register',user);
   }
+
   logout(): Observable<any>{
     //@ts-ignore
     return this.http.post<any>(API_URL + '/logout',null, {headers: {'Authorization': `Bearer ${localStorage.getItem('token')} ` } });

@@ -1,1 +1,9 @@
-<p>topic works!</p>
+<div class="container">
+  <div class="card" style="width: 18rem;" >
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body"  *ngFor="let category of listCategories">
+      <h5 class="card-title">{{category.category_name}}</h5>
+      <a class="btn btn-primary" (click)="getQuizz(category.id)">Go somewhere</a>
+    </div>
+  </div>
+</div>

@@ -33,11 +33,11 @@ users: any[]= [];
     let user = this.registerForm?.value;
     console.log(user);
     this.registerService.register(user).subscribe((user: any) => {
-      this.users.unshift(user)
+      this.users.unshift(user);
+      this.registerForm?.reset();
+      this.router.navigate(['/auth/login']);
     })
-    this.registerForm?.reset();
-    alert('tao thanh cong');
-    this.router.navigate(['/auth/login']);
+
   }
 
 }

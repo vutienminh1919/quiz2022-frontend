@@ -23,10 +23,6 @@ const routes: Routes = [
     component: ResultComponent
   },
   {
-    path: 'topic',
-    component: TopicComponent
-  },
-  {
     path: 'home',
     component: HomeComponent,
 
