@@ -1,10 +1,10 @@
 <div class="container">
-  <form *ngIf="formAddQuiz" [formGroup] = "formAddQuiz" (ngSubmit)="submit()">
+  <form *ngIf="formAddQuiz" [formGroup]="formAddQuiz" (ngSubmit)="submit()">
     <div class="form-group">
       <label>Tên bài thi</label>
       <input type="text" class="form-control" formControlName="name">
       <div *ngIf="name?.invalid && (name?.dirty || name?.touched)">
-        <p  style="color: red; margin-bottom: 10px" *ngIf="name?.errors?.['required']">
+        <p style="color: red; margin-bottom: 10px" *ngIf="name?.errors?.['required']">
           Tên bài thi không được để trống
         </p>
       </div>
@@ -18,25 +18,31 @@
         <option value="4">60 phút</option>
       </select>
       <div *ngIf="duration?.invalid && (duration?.dirty || duration?.touched)">
-        <p  style="color: red; margin-bottom: 10px" *ngIf="duration?.errors?.['required']">
+        <p style="color: red; margin-bottom: 10px" *ngIf="duration?.errors?.['required']">
           Thời gian làm không được để trống
         </p>
       </div>
     </div>
-<!--    <div class="form-group">-->
-<!--      <label>Published</label>-->
-<!--      <input type="text" class="form-control" formControlName="published">-->
-<!--    </div>-->
+    <!--    <div class="form-group">-->
+    <!--      <label>Published</label>-->
+    <!--      <input type="text" class="form-control" formControlName="published">-->
+    <!--    </div>-->
     <label>Chọn câu hỏi</label>
-    <input type="text" [(ngModel)]="searchQuestion" placeholder="Search">
-    <div *ngFor="let q of questions | filter: searchQuestion" class="form-group">
-
-      <input type="checkbox" (change)="onCheckSubmit($event, q.id)">
-      <label>{{q.question_content}}</label>
+    <div class="row">
+      <div class="col-6">
+      </div>
+      <div class="col-6">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        <input class="form-control" type="text" [(ngModel)]="search" [ngModelOptions]="{standalone: true}">
+      </div>
     </div>
-<!--    {{submitQuestion|json}}-->
+    <div class="form-group" *ngFor="let q of questions | filter: search|paginate: { itemsPerPage: 10, currentPage: p } ">
+      <input type="checkbox" (change)="onCheckSubmit($event, q.id)">
+      <label >{{q.question_content}}</label>
+    </div>
+    <!--    {{submitQuestion|json}}-->
     <button [disabled]="formAddQuiz?.invalid" class="btn btn-primary">Submit</button>
-
 
   </form>
 </div>
+

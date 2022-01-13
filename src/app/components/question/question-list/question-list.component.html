@@ -54,7 +54,7 @@
             <td><b>Đúng/Sai</b></td>
           </tr>
           <tbody>
-          <tr *ngFor="let ans of question?.answers| paginate: { itemsPerPage: 10, currentPage: p }">
+          <tr *ngFor="let ans of question?.answers">
             <td >{{ans.answer_content}}</td>
             <td >{{ans.correct == 1 ? 'Đúng' : ans.correct == 0 ? 'Sai' : ''}}</td>
           </tr>
